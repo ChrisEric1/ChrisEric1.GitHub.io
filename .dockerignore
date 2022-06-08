@@ -1,0 +1,5 @@
+node_modules/
+.vscode/
+test2.js
+config.json
+npm-debug.log

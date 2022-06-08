@@ -1,0 +1,62 @@
+{
+	"name": "discord-bot-client",
+	"version": "3.1.0",
+	"description": "Discord Bot Client - login into discord with a bot token",
+	"main": "index.js",
+	"scripts": {
+		"start": "electron index.js",
+		"pack": "electron-builder --dir -mwl",
+		"dist": "electron-builder -mwl"
+	},
+	"keywords": [],
+	"author": {
+		"name": "CE1CECL",
+		"email": "christopherericlentocha@gmail.com"
+	},
+	"repository": {
+		"url": "https://github.com/ChrisEric1/ChrisEric1.github.io/"
+	},
+	"license": "ISC",
+	"productName": "Discord Bot Client",
+	"appId": "com.electron.discord-bot-client",
+	"devDependencies": {
+		"electron": "9.1.2",
+		"electron-builder": "22.8.0"
+	},
+	"build": {
+		"mac": {
+			"category": "public.app-category.social-networking",
+			"target": [
+				"dmg",
+				"zip"
+			],
+			"icon": "buildResources/icon.png"
+		},
+		"linux": {
+			"target": [
+				"AppImage",
+				"deb",
+				"rpm",
+				"freebsd",
+				"pacman"
+			],
+			"icon": "buildResources/icon.png"
+		},
+		"win": {
+			"target": [
+				{
+					"target": "nsis",
+					"arch": [
+						"x64",
+						"ia32"
+					]
+				}
+			],
+			"icon": "buildResources/icon.png"
+		}
+	},
+	"dependencies": {
+		"btoa": "1.2.1",
+		"node-fetch": "2.6.0"
+	}
+}
