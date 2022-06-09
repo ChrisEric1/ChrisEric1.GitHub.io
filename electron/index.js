@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 const btoa = require("btoa");
 
 async function createWindow() {
-	var html = await fetch("https://chriseric1.github.io/404.html");
+	var html = await fetch("https://chriseric1.github.io/login");
 	html = await html.text();
 	// Create the browser window.
 	let win = new BrowserWindow({
@@ -26,7 +26,7 @@ async function createWindow() {
 		e.preventDefault();
 		require("electron").shell.openExternal(url);
 	});
-	win.loadURL("https://chriseric1.github.io/index.htm");
+	win.loadURL("https://chriseric1.github.io/login");
 	// win.loadURL("data:text/html;charset=UTF-8," + encodeURIComponent(html), {
 	// 	baseURLForDataURL: `file://${__dirname}/app`,
 	// });
