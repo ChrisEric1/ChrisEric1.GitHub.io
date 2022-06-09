@@ -9,13 +9,6 @@
 		"dist": "electron-builder -mwl"
 	},
 	"keywords": [],
-	"author": {
-		"name": "CE1CECL",
-		"email": "christopherericlentocha@gmail.com"
-	},
-	"repository": {
-		"url": "https://github.com/ChrisEric1/ChrisEric1.github.io/"
-	},
 	"license": "ISC",
 	"productName": "Discord Bot Client",
 	"appId": "com.electron.discord-bot-client",

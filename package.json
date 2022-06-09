@@ -9,7 +9,6 @@
 		"electron": "electron electron/electron.js"
 	},
 	"keywords": [],
-	"author": "CE1CECL",
 	"license": "ISC",
 	"dependencies": {
 		"express": "4.17.1"

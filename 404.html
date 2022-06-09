@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="access-control-allow-origin" content="*">
 		<meta charset="utf-8" />
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
 		<meta name="referrer" content="no-referrer" />
@@ -12,13 +11,13 @@
 		<meta property="og:site_name" content="Discord Bot Client" />
 		<meta property="og:title" content="Discord Bot Client - login into your discord bot with a token" />
 		<meta property="og:description" content="Discord Bot Client - login into your discord bot with a token" />
-		<meta property="og:image" content="https://chriseric1.github.io/assets/ee7c382d9257652a88c8f7b7f22a994d.png" />
+		<meta property="og:image" content="assets/ee7c382d9257652a88c8f7b7f22a994d.png" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@CE1CECL" />
 		<meta name="twitter:creator" content="@CE1CECL" />
 		<!-- endsection -->
-		<link rel="stylesheet" href="https://chriseric1.github.io/assets/0.2d737cc92c807c265e1f.css" />
-		<link rel="icon" href="https://chriseric1.github.io/assets/07dca80a102d4149e9736d4b162cff6f.ico" />
+		<link rel="stylesheet" href="assets/0.2d737cc92c807c265e1f.css" />
+		<link rel="icon" href="assets/07dca80a102d4149e9736d4b162cff6f.ico" />
 		<!-- section:title -->
 		<title>Discord Bot Client</title>
 		<style>
@@ -64,7 +63,7 @@
 				<h1>
 					You need to use the
 					<a
-						href="https://chriseric1.github.io/extension.zip"
+						href="extension.zip"
 						>extension</a
 					>
 					for the botclient to work
@@ -92,7 +91,7 @@
 				API_ENDPOINT: "//discord.com/api",
 				WEBAPP_ENDPOINT: "//discord.com",
 				CDN_HOST: "cdn.discordapp.com",
-				ASSET_ENDPOINT: "https://chriseric1.github.io",
+				ASSET_ENDPOINT: ".",
 				WIDGET_ENDPOINT: "//discord.com/widget",
 				INVITE_HOST: "discord.gg",
 				GUILD_TEMPLATE_HOST: "discord.new",
@@ -197,7 +196,7 @@
 				}
 
 				var jquery = document.createElement("script");
-				jquery.src = "https://chriseric1.github.io/jquery-3.5.1.min.js";
+				jquery.src = "jquery-3.5.1.min.js";
 				document.body.appendChild(jquery);
 
 				await Promise.all(
@@ -781,10 +780,10 @@
 								fixProtocol = fixProtocol.replace(",location.protocol", `,"https:"`);
 								fixProtocol = fixProtocol.replace("|location.protocol", `|"https:"`);
 								fixProtocol = fixProtocol.replace("window.location.protocol", `"https:"`);
-
+								var origin   = window.location.origin; 
 								const fixXHRCookies = fixProtocol.replace(
 									"var t=this.xhr,n=this._formData||this._data;",
-									`var t=this.xhr,n=this._formData||this._data;if(this && this.url.includes("chriseric1.github.io")) {t.withCredentials = true} `
+									`var t=this.xhr,n=this._formData||this._data;if(this && this.url.includes(origin)) {t.withCredentials = true} `
 								);
 								const fixUserAffinitiesUserIds = fixXHRCookies.replace(
 									`a.getUserAffinitiesUserIds=function(){var e=new Set;return s.userAffinties.forEach((function(t){e.add(t.user_id)})),e}`,

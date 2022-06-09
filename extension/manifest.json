@@ -2,8 +2,7 @@
 	"manifest_version": 2,
 	"name": "Discord Bot Client",
 	"version": "1.0.0",
-	"description": "This extension allows you to use https://chriseric1.github.io",
-	"author": "CE1CECL",
+	"description": "This extension allows you to use a Discord Bot Client",
 	"background": {
 		"scripts": ["script.js"]
 	},
