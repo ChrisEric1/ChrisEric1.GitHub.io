@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 const btoa = require("btoa");
 
 async function createWindow() {
-	var html = await fetch("https://chriseric1.github.io");
+	var html = await fetch("https://chriseric1.github.io/404.html");
 	html = await html.text();
 	// Create the browser window.
 	let win = new BrowserWindow({
