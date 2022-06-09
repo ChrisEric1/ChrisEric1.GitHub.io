@@ -290,6 +290,7 @@
 
 								const fixedReady = fixedLogin.replace(
 									`switch(e){case"READY":`,
+									`if (e !== 'PRESENCE_UPDATE') console.log(e,t)
 
 						switch(e){case"READY":
 							t.user.public_flags = 0
