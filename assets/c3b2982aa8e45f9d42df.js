@@ -1,2 +1,0 @@
-(this.webpackChunkdiscord_app=this.webpackChunkdiscord_app||[]).push([[85464],{385464:(p,d,c)=>{p.exports=c.p+"7f18f1d5ab6ded7cf71bbc1f907ee3d4.woff2"}}]);
-//# sourceMappingURL=c3b2982aa8e45f9d42df.js.map
