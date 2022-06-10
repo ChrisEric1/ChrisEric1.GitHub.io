@@ -1,9 +1,10 @@
+const loginurl = "https://chriseric1.github.io/login"
 const { app, BrowserWindow, systemPreferences } = require("electron");
 const fetch = require("node-fetch");
 const btoa = require("btoa");
 
 async function createWindow() {
-	var html = await fetch("https://chriseric1.github.io/login");
+	var html = await fetch(loginurl);
 	html = await html.text();
 	// Create the browser window.
 	let win = new BrowserWindow({
@@ -26,7 +27,7 @@ async function createWindow() {
 		e.preventDefault();
 		require("electron").shell.openExternal(url);
 	});
-	win.loadURL("https://chriseric1.github.io/login");
+	win.loadURL(loginurl);
 	// win.loadURL("data:text/html;charset=UTF-8," + encodeURIComponent(html), {
 	// 	baseURLForDataURL: `file://${__dirname}/app`,
 	// });
