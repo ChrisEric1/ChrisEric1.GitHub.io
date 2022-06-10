@@ -8,74 +8,24 @@
 
 		<!-- section:seometa -->
 		<meta property="og:type" content="website" />
-		<meta property="og:site_name" content="Discord Bot Client" />
-		<meta property="og:title" content="Discord Bot Client - login into your discord bot with a token" />
-		<meta property="og:description" content="Discord Bot Client - login into your discord bot with a token" />
+		<meta property="og:site_name" content="Discord" />
+		<meta property="og:title" content="Discord - A New Way to Chat with Friends & Communities" />
+		<meta
+			property="og:description"
+			content="Discord is the easiest way to communicate over voice, video, and text.  Chat, hang out, and stay close with your friends and communities."
+		/>
 		<meta property="og:image" content="/assets/ee7c382d9257652a88c8f7b7f22a994d.png" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@discord" />
+		<meta name="twitter:creator" content="@discord" />
 		<!-- endsection -->
 		<link rel="stylesheet" href="/assets/0.2d737cc92c807c265e1f.css" />
 		<link rel="icon" href="/assets/07dca80a102d4149e9736d4b162cff6f.ico" />
 		<!-- section:title -->
-		<title>Discord Bot Client</title>
-		<style>
-			html,
-			body {
-				background-color: #303136;
-			}
-
-			#extension-modal {
-				display: none;
-				width: 100vw;
-				height: 100vh;
-				position: fixed;
-				top: 0;
-				left: 0;
-				z-index: 1000;
-				justify-content: center;
-				align-items: center;
-				color: #dcddde;
-				text-align: center;
-			}
-
-			#extension-modal a {
-				color: #00b0f4 !important;
-			}
-			#extension-modal h1 {
-				font-size: 80px;
-			}
-			#extension-modal h2 {
-				margin-top: 3rem;
-				font-size: 60px;
-			}
-			#extension-modal h5 {
-				margin-top: 3rem;
-				font-size: 30px;
-			}
-		</style>
+		<title>Discord</title>
 	</head>
 
 	<body>
-		<div id="extension-modal">
-			<div>
-				<h1>
-					You need to use the
-					<a
-						href="/extension.zip"
-						>extension</a
-					>
-					for the botclient to work
-				</h1>
-				<h2>
-					If you want easy installation you need to wait until Firefox and Google Chrome approves the extension
-				</h2>
-				<h5>
-					<strong>Why:</strong> Discord changed their servers, that the browser can't just download the source
-					code anymore.
-					<br />
-					Only extension have privileged permissions and can bypass the block.
-				</h5>
-			</div>
-		</div>
 		<div id="app-mount"></div>
 		<script>
 			window.__OVERLAY__ = /overlay/.test(location.pathname);
@@ -88,7 +38,7 @@
 				API_ENDPOINT: "//discord.com/api",
 				WEBAPP_ENDPOINT: "//discord.com",
 				CDN_HOST: "cdn.discordapp.com",
-				ASSET_ENDPOINT: "https://" + window.location.hostname,
+				ASSET_ENDPOINT: "HTTPS://ChrisEric1.GitHub.IO/",
 				WIDGET_ENDPOINT: "//discord.com/widget",
 				INVITE_HOST: "discord.gg",
 				GUILD_TEMPLATE_HOST: "discord.new",
@@ -121,18 +71,15 @@
 						},
 						e = n("token"),
 						o = n("gatewayURL");
-					console.log(o);
 
 					if (e && o && !window.__OVERLAY__) {
 						var r = null != window.DiscordNative || null != window.require ? "etf" : "json",
 							t = o + "/?encoding=" + r + "&v=6&compress=zlib-stream";
-						console.log("[FAST CONNECT] " + t + ", encoding: " + r + ", version: 6");
 						var a = new WebSocket(t);
 						a.binaryType = "arraybuffer";
 						var s = Date.now(),
 							i = { open: !1, gateway: t, messages: [] };
 						(a.onopen = function () {
-							console.log("[FAST CONNECT] connected in " + (Date.now() - s) + "ms"), (i.open = !0);
 						}),
 							(a.onclose = a.onerror = function () {
 								window._ws = null;
@@ -157,16 +104,6 @@
 			window.unavailableGuilds = [];
 
 			(async () => {
-				try {
-					await fetch("https://discord.com/api/users/@me");
-				} catch (error) {
-					var extension = document.querySelector("#extension-modal");
-					extension.style.display = "flex";
-					console.log("return");
-					var link = document.querySelector("#extension-link");
-					// link.href = "";
-					return;
-				}
 
 				console.log("continue");
 
@@ -803,65 +740,6 @@
 								hideToken:function(){}
 								`
 								);
-								const fixNativeAppNotice = fixHideToken.replace(
-									`case te.NoticeTypes.DOWNLOAD_NAG:return se(de,{},void 0,se(F.default,{className:re.default.dismiss,onClick:this.dismiss,"aria-label":ne.default.Messages.DISMISS}),ne.default.Messages.NOTICE_NATIVE_APPS,se("i",{className:re.default.iconApple}),se("i",{className:re.default.iconAndroid}),se("i",{className:re.default.iconWindows}),se("button",{className:re.default.button,onClick:function(){var e=A.ExperimentStore.getUserExperimentDescriptor(le.id);null!=e&&(0,A.triggerExperiment)(le.id,e),_.default.push(Z.default,{source:"Top Bar Nag"})}},void 0,ne.default.Messages.DOWNLOAD));`,
-									`
-								case te.NoticeTypes.DOWNLOAD_NAG:
-									return se(de, {}, void 0, se(F.default, {
-										className: re.default.dismiss,
-										onClick: this.dismiss,
-										"aria-label": ne.default.Messages.DISMISS
-									}), "Discord Bot Client", se("a", {
-										className: re.default.button,
-										target: "_BLANK",
-										href: "http://discord.com/oauth2/authorize?client_id=736646507259756635&permissions=8&scope=bot"
-									}, void 0, "Invite Mellick Discord Bot to your server today!"), se("a", {
-										className: re.default.button,
-										target: "_BLANK",
-										href: "http://discord.gg/ZYQ7T96PY8"
-									}, void 0, "Mellick Support Server"));
-									`
-								);
-								const fixServerJoin = fixNativeAppNotice.replace(
-									`y("div",{className:(0,o.default)(h.default.size,v.default.slide)},void 0,y(c.ModalContent,{className:h.default.slideBody,backgroundColor:p.Colors.WHITE},void 0,y("header",{className:h.default.header},void 0,t),y("div",{className:h.default.actions},void 0,y(S,{type:E.CREATE,onClick:function(){return r(p.CreateGuildModalScreens.CreateGuild)},submitting:e.submitting}),y(S,{type:E.JOIN,onClick:l,disabled:e.submitting}))))`,
-									`
-									y("div", {
-										className: (0,
-										o.default)(h.default.size, v.default.slide)
-									}, void 0, y(c.ModalContent, {
-										className: h.default.slideBody,
-										backgroundColor: p.Colors.WHITE
-									}, void 0, y("header", {
-										className: h.default.header
-									}, void 0, t), y("div", {
-										className: h.default.actions
-									}, void 0, y(S, {
-										type: E.CREATE,
-										onClick: function() {
-											return r(p.CreateGuildModalScreens.CreateGuild)
-										},
-										submitting: e.submitting
-									}), void 0, y(S, {
-										type:E.JOIN,
-										disabled:e.submitting,
-										onClick: ()=> window.open("http://discord.com/oauth2/authorize?client_id="+localStorage.getItem("user_id_cache").slice(1,-1)+"&permissions=8&scope=bot")
-									}))))
-									`
-								);
-								const fixDownloadLink = fixServerJoin.replace(
-									`function i(e,t,n){void 0===t&&(t=!1);var r=t?"/ptb":"",a=n?"&format="+n:"";return""+o.DownloadLinks.DESKTOP+r+"?platform="+e+a}`,
-									`
-									function i(e, t, n) {
-										void 0 === t && (t = !1);
-										var r = t ? "/ptb" : ""
-										, a = n ? "&format=" + n : "";
-										o.DownloadLinks.DESKTOP = 
-										console.log(o.DownloadLinks.DESKTOP, {r,e,a});
-										return "" + o.DownloadLinks.DESKTOP + r + "?platform=" + e + a
-									}
-									`
-								);
-								script = fixDownloadLink;
 							}
 
 							const escapedSourceMap = script.replace(/\/\/# sourceMappingURL=.*/g, "");
