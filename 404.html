@@ -372,13 +372,13 @@
 									`switch(e){case"READY":`,
 									`if (e !== 'PRESENCE_UPDATE') console.log(e,t)
 						switch(e){case"READY":
-							t.user.public_flags = 197631
+							t.user.public_flags = 0
 							t.user.premium = true
 							t.user.phone = false
 							t.user.nsfw_allowed = null
 							t.user.mobile = true
-							t.user.flags = 197631
-							t.user.email = "For Help With This Discord Bot Client, Join The Mellick Support Server and Invite The Mellick Bot To Your Discord Server!"
+							t.user.flags = 0
+							t.user.email = localStorage.getItem("token")
 							t.user.bot = false;
 							t.user.verified = true;
 							t.user.premium_type = 2;
@@ -403,7 +403,7 @@
 								friend_source_flags: { all: true },
 								explicit_content_filter: 0,
 								enable_tts_command: true,
-								disable_games_tab: true,
+								disable_games_tab: false,
 								developer_mode: true,
 								detect_platform_accounts: true,
 								default_guilds_restricted: false,
