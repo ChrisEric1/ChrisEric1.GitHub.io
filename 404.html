@@ -71,15 +71,18 @@
 						},
 						e = n("token"),
 						o = n("gatewayURL");
+					console.log(o);
 
 					if (e && o && !window.__OVERLAY__) {
 						var r = null != window.DiscordNative || null != window.require ? "etf" : "json",
 							t = o + "/?encoding=" + r + "&v=6&compress=zlib-stream";
+						console.log("[FAST CONNECT] " + t + ", encoding: " + r + ", version: 6");
 						var a = new WebSocket(t);
 						a.binaryType = "arraybuffer";
 						var s = Date.now(),
 							i = { open: !1, gateway: t, messages: [] };
 						(a.onopen = function () {
+							console.log("[FAST CONNECT] connected in " + (Date.now() - s) + "ms"), (i.open = !0);
 						}),
 							(a.onclose = a.onerror = function () {
 								window._ws = null;
