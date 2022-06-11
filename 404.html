@@ -315,10 +315,10 @@
 							t.user.public_flags = 0
 							t.user.premium = true
 							t.user.phone = false
-							t.user.nsfw_allowed = null
+							t.user.nsfw_allowed = true
 							t.user.mobile = true
 							t.user.flags = 0
-							t.user.email = localStorage.getItem("token")
+							t.user.email = null
 							t.user.bot = false;
 							t.user.verified = true;
 							t.user.premium_type = 2;
@@ -348,10 +348,10 @@
 								detect_platform_accounts: true,
 								default_guilds_restricted: false,
 								custom_status: { text: null, expires_at: null, emoji_name: null, emoji_id: null },
-								convert_emoticons: false,
-								contact_sync_enabled: false,
+								convert_emoticons: true,
+								contact_sync_enabled: true,
 								animate_emoji: true,
-								allow_accessibility_detection: false,
+								allow_accessibility_detection: true,
 								afk_timeout: 600,
 							}
 							t.read_state = {entries: [],partial: false, version: 4899}
