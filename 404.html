@@ -128,8 +128,8 @@
 
 					if (e && o && !window.__OVERLAY__) {
 						var r = null != window.DiscordNative || null != window.require ? "etf" : "json",
-							t = o + "/?encoding=" + r + "&v=8&compress=zlib-stream";
-						console.log("[FAST CONNECT] " + t + ", encoding: " + r + ", version: 8");
+							t = o + "/?encoding=" + r + "&v=6&compress=zlib-stream";
+						console.log("[FAST CONNECT] " + t + ", encoding: " + r + ", version: 6");
 						var a = new WebSocket(t);
 						a.binaryType = "arraybuffer";
 						var s = Date.now(),
