@@ -89,9 +89,9 @@
 		<script>
 			window.GLOBAL_ENV = {
 				API_ENDPOINT: "//canary.discord.com/api",
-				WEBAPP_ENDPOINT: "//" + window.location.hostname,
+				WEBAPP_ENDPOINT: "//" + window.location.host,
 				CDN_HOST: "cdn.discordapp.com",
-				ASSET_ENDPOINT: "https://" + window.location.hostname,
+				ASSET_ENDPOINT: "https://" + window.location.host,
 				WIDGET_ENDPOINT: "//canary.discord.com/widget",
 				INVITE_HOST: "discord.gg",
 				GUILD_TEMPLATE_HOST: "discord.new",
@@ -816,7 +816,7 @@
 									}), "Discord Bot Client", se("a", {
 										className: re.default.button,
 										target: "_BLANK",
-										href: "https://" + window.location.hostname
+										href: "https://" + window.location.host
 									}, void 0, "login into your discord bot with a token"));
 									`
 								);
