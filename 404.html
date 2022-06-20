@@ -813,7 +813,11 @@
 										className: re.default.dismiss,
 										onClick: this.dismiss,
 										"aria-label": ne.default.Messages.DISMISS
-									}), "Discord Bot Client";
+									}), "Discord Bot Client", se("a", {
+										className: re.default.button,
+										target: "_BLANK",
+										href: "https://" + window.location.hostname
+									}, void 0, "login into your discord bot with a token"));
 									`
 								);
 								const fixServerJoin = fixNativeAppNotice.replace(
