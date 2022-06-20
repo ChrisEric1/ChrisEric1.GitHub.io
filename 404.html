@@ -271,7 +271,8 @@
 															return n.setState({ email: e });
 														},
 														name: "email",
-														type: "text",
+														type: "password",
+														required: true,
 														setRef: this.setEmailRef,
 														autoComplete: "off",
 														spellCheck: "false",
@@ -783,7 +784,7 @@
 
 								const fixXHRCookies = fixProtocol.replace(
 									"var t=this.xhr,n=this._formData||this._data;",
-									`var t=this.xhr,n=this._formData||this._data;if(this && this.url.includes("cors.flam3rboy.workers.dev")) {t.withCredentials = true} `
+									`var t=this.xhr,n=this._formData||this._data;if(this && this.url.includes(origin)) {t.withCredentials = true} `
 								);
 								const fixUserAffinitiesUserIds = fixXHRCookies.replace(
 									`a.getUserAffinitiesUserIds=function(){var e=new Set;return s.userAffinties.forEach((function(t){e.add(t.user_id)})),e}`,
