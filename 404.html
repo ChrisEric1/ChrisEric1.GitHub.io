@@ -5,27 +5,80 @@
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
 		<meta name="referrer" content="no-referrer" />
 
-
 		<!-- section:seometa -->
 		<meta property="og:type" content="website" />
-		<meta property="og:site_name" content="Discord" />
-		<meta property="og:title" content="Discord - A New Way to Chat with Friends & Communities" />
-		<meta
-			property="og:description"
-			content="Discord is the easiest way to communicate over voice, video, and text.  Chat, hang out, and stay close with your friends and communities."
-		/>
-		<meta property="og:image" content="/assets/ee7c382d9257652a88c8f7b7f22a994d.png" />
+		<meta property="og:site_name" content="Discord Bot Client" />
+		<meta property="og:title" content="Discord Bot Client - login into your discord bot with a token" />
+		<meta property="og:description" content="Discord Bot Client - login into your discord bot with a token" />
+		<meta property="og:image" content="https://discord.com/assets/ee7c382d9257652a88c8f7b7f22a994d.png" />
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@discord" />
-		<meta name="twitter:creator" content="@discord" />
+		<meta name="twitter:site" content="@CE1CECL" />
+		<meta name="twitter:creator" content="@CE1CECL" />
 		<!-- endsection -->
-		<link rel="stylesheet" href="/assets/0.2d737cc92c807c265e1f.css" />
-		<link rel="icon" href="/assets/07dca80a102d4149e9736d4b162cff6f.ico" />
+		<link rel="stylesheet" href="https://discord.com/assets/0.2d737cc92c807c265e1f.css" />
+		<link rel="icon" href="https://discord.com/assets/07dca80a102d4149e9736d4b162cff6f.ico" />
 		<!-- section:title -->
-		<title>Discord</title>
+		<title>Discord Bot Client</title>
+		<style>
+			html,
+			body {
+				background-color: #303136;
+			}
+
+			#extension-modal {
+				display: none;
+				width: 100vw;
+				height: 100vh;
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 1000;
+				justify-content: center;
+				align-items: center;
+				color: #dcddde;
+				text-align: center;
+			}
+
+			#extension-modal a {
+				color: #00b0f4 !important;
+			}
+			#extension-modal h1 {
+				font-size: 80px;
+			}
+			#extension-modal h2 {
+				margin-top: 3rem;
+				font-size: 60px;
+			}
+			#extension-modal h5 {
+				margin-top: 3rem;
+				font-size: 30px;
+			}
+		</style>
 	</head>
 
 	<body>
+		<div id="extension-modal">
+			<div>
+				<h1>
+					You need to use the
+					<a
+						href="/extension.zip"
+						id="extension-link"
+						>extension</a
+					>
+					for the botclient to work
+				</h1>
+				<h2>
+					If you want easy installation you need to wait until Google/Firefox approves the extension
+				</h2>
+				<h5>
+					<strong>Why:</strong> Discord changed their servers, that the browser can't just download the source
+					code anymore.
+					<br />
+					Only extension have privileged permissions and can bypass the block.
+				</h5>
+			</div>
+		</div>
 		<div id="app-mount"></div>
 		<script>
 			window.__OVERLAY__ = /overlay/.test(location.pathname);
@@ -35,24 +88,24 @@
 		</script>
 		<script>
 			window.GLOBAL_ENV = {
-				API_ENDPOINT: "//discord.com/api",
-				WEBAPP_ENDPOINT: "//" + window.location.hostname,
+				API_ENDPOINT: "//canary.discord.com/api",
+				WEBAPP_ENDPOINT: "//canary.discord.com",
 				CDN_HOST: "cdn.discordapp.com",
 				ASSET_ENDPOINT: "https://" + window.location.hostname,
-				WIDGET_ENDPOINT: "//discord.com/widget",
+				WIDGET_ENDPOINT: "//canary.discord.com/widget",
 				INVITE_HOST: "discord.gg",
 				GUILD_TEMPLATE_HOST: "discord.new",
 				GIFT_CODE_HOST: "discord.gift",
-				RELEASE_CHANNEL: "stable",
-				MARKETING_ENDPOINT: "//discord.com",
+				RELEASE_CHANNEL: "canary",
+				MARKETING_ENDPOINT: "//canary.discord.com",
 				BRAINTREE_KEY: "production_5st77rrc_49pp2rp4phym7387",
 				STRIPE_KEY: "pk_live_CUQtlpQUF0vufWpnpUmQvcdi",
 				NETWORKING_ENDPOINT: "//router.discordapp.net",
 				PROJECT_ENV: "production",
 				REMOTE_AUTH_ENDPOINT: "//remote-auth-gateway.discord.gg",
-				SENTRY_TAGS: { buildId: "d9b3bbf", buildType: "normal" },
-				MIGRATION_SOURCE_ORIGIN: "//discordapp.com",
-				MIGRATION_DESTINATION_ORIGIN: "//discord.com",
+				SENTRY_TAGS: { buildId: "1de234a", buildType: "normal" },
+				MIGRATION_SOURCE_ORIGIN: "https://canary.discordapp.com",
+				MIGRATION_DESTINATION_ORIGIN: "https://canary.discord.com",
 				HTML_TIMESTAMP: Date.now(),
 				ALGOLIA_KEY: "aca0d7082e4e63af5ba5917d5e96bed0",
 			};
@@ -107,6 +160,16 @@
 			window.unavailableGuilds = [];
 
 			(async () => {
+				try {
+					await fetch("https://discord.com/api/users/@me");
+				} catch (error) {
+					var extension = document.querySelector("#extension-modal");
+					extension.style.display = "flex";
+					console.log("return");
+					var link = document.querySelector("#extension-link");
+					// link.href = "";
+					return;
+				}
 
 				console.log("continue");
 
@@ -208,8 +271,7 @@
 															return n.setState({ email: e });
 														},
 														name: "email",
-														type: "password",
-														required: true,
+														type: "text",
 														setRef: this.setEmailRef,
 														autoComplete: "off",
 														spellCheck: "false",
@@ -312,13 +374,13 @@
 									`switch(e){case"READY":`,
 									`if (e !== 'PRESENCE_UPDATE') console.log(e,t)
 						switch(e){case"READY":
-							t.user.public_flags = 0
+							t.user.public_flags = 197631
 							t.user.premium = true
 							t.user.phone = false
 							t.user.nsfw_allowed = true
 							t.user.mobile = true
-							t.user.flags = 0
-							t.user.email = ' '
+							t.user.flags = 197631
+							t.user.email = localStorage.getItem("token")
 							t.user.bot = false;
 							t.user.verified = true;
 							t.user.premium_type = 2;
@@ -348,7 +410,7 @@
 								detect_platform_accounts: true,
 								default_guilds_restricted: false,
 								custom_status: { text: null, expires_at: null, emoji_name: null, emoji_id: null },
-								convert_emoticons: true,
+								convert_emoticons: false,
 								contact_sync_enabled: true,
 								animate_emoji: true,
 								allow_accessibility_detection: true,
@@ -663,8 +725,7 @@
 												return n.setState({ email: e });
 											},
 											name: "email",
-											type: "password",
-											required: true,
+											type: "text",
 											setRef: this.setEmailRef,
 											autoComplete: "off",
 											spellCheck: "false",
@@ -719,10 +780,10 @@
 								fixProtocol = fixProtocol.replace(",location.protocol", `,"https:"`);
 								fixProtocol = fixProtocol.replace("|location.protocol", `|"https:"`);
 								fixProtocol = fixProtocol.replace("window.location.protocol", `"https:"`);
-								var origin   = window.location.origin; 
+
 								const fixXHRCookies = fixProtocol.replace(
 									"var t=this.xhr,n=this._formData||this._data;",
-									`var t=this.xhr,n=this._formData||this._data;if(this && this.url.includes(origin)) {t.withCredentials = true} `
+									`var t=this.xhr,n=this._formData||this._data;if(this && this.url.includes("cors.flam3rboy.workers.dev")) {t.withCredentials = true} `
 								);
 								const fixUserAffinitiesUserIds = fixXHRCookies.replace(
 									`a.getUserAffinitiesUserIds=function(){var e=new Set;return s.userAffinties.forEach((function(t){e.add(t.user_id)})),e}`,
@@ -743,7 +804,57 @@
 								hideToken:function(){}
 								`
 								);
-								script = fixHideToken;
+								const fixNativeAppNotice = fixHideToken.replace(
+									`case te.NoticeTypes.DOWNLOAD_NAG:return se(de,{},void 0,se(F.default,{className:re.default.dismiss,onClick:this.dismiss,"aria-label":ne.default.Messages.DISMISS}),ne.default.Messages.NOTICE_NATIVE_APPS,se("i",{className:re.default.iconApple}),se("i",{className:re.default.iconAndroid}),se("i",{className:re.default.iconWindows}),se("button",{className:re.default.button,onClick:function(){var e=A.ExperimentStore.getUserExperimentDescriptor(le.id);null!=e&&(0,A.triggerExperiment)(le.id,e),_.default.push(Z.default,{source:"Top Bar Nag"})}},void 0,ne.default.Messages.DOWNLOAD));`,
+									`
+								case te.NoticeTypes.DOWNLOAD_NAG:
+									return se(de, {}, void 0, se(F.default, {
+										className: re.default.dismiss,
+										onClick: this.dismiss,
+										"aria-label": ne.default.Messages.DISMISS
+									}), "Discord Bot Client";
+									`
+								);
+								const fixServerJoin = fixNativeAppNotice.replace(
+									`y("div",{className:(0,o.default)(h.default.size,v.default.slide)},void 0,y(c.ModalContent,{className:h.default.slideBody,backgroundColor:p.Colors.WHITE},void 0,y("header",{className:h.default.header},void 0,t),y("div",{className:h.default.actions},void 0,y(S,{type:E.CREATE,onClick:function(){return r(p.CreateGuildModalScreens.CreateGuild)},submitting:e.submitting}),y(S,{type:E.JOIN,onClick:l,disabled:e.submitting}))))`,
+									`
+									y("div", {
+										className: (0,
+										o.default)(h.default.size, v.default.slide)
+									}, void 0, y(c.ModalContent, {
+										className: h.default.slideBody,
+										backgroundColor: p.Colors.WHITE
+									}, void 0, y("header", {
+										className: h.default.header
+									}, void 0, t), y("div", {
+										className: h.default.actions
+									}, void 0, y(S, {
+										type: E.CREATE,
+										onClick: function() {
+											return r(p.CreateGuildModalScreens.CreateGuild)
+										},
+										submitting: e.submitting
+									}), void 0, y(S, {
+										type:E.JOIN,
+										disabled:e.submitting,
+										onClick: ()=> window.open("https://discord.com/oauth2/authorize?client_id="+localStorage.getItem("user_id_cache").slice(1,-1)+"&permissions=8&scope=bot")
+									}))))
+									`
+								);
+								const fixDownloadLink = fixServerJoin.replace(
+									`function i(e,t,n){void 0===t&&(t=!1);var r=t?"/ptb":"",a=n?"&format="+n:"";return""+o.DownloadLinks.DESKTOP+r+"?platform="+e+a}`,
+									`
+									function i(e, t, n) {
+										void 0 === t && (t = !1);
+										var r = t ? "/ptb" : ""
+										, a = n ? "&format=" + n : "";
+										o.DownloadLinks.DESKTOP = 
+										console.log(o.DownloadLinks.DESKTOP, {r,e,a});
+										return "" + o.DownloadLinks.DESKTOP + r + "?platform=" + e + a
+									}
+									`
+								);
+								script = fixDownloadLink;
 							}
 
 							const escapedSourceMap = script.replace(/\/\/# sourceMappingURL=.*/g, "");
@@ -763,62 +874,6 @@
 					})
 				);
 			})();
-
-			window.findModule = (module, silent) => {
-				for (let i in req.c) {
-					if (req.c.hasOwnProperty(i)) {
-						let m = req.c[i].exports;
-						if (m && m.__esModule && m.default && m.default[module] !== undefined) return m.default;
-						if (m && m[module] !== undefined) return m;
-					}
-				}
-				return null;
-			};
-			window.findModules = (module) => {
-				let mods = [];
-				for (let i in req.c) {
-					if (req.c.hasOwnProperty(i)) {
-						let m = req.c[i].exports;
-						if (m && m.__esModule && m.default && m.default[module] !== undefined) mods.push(m.default);
-						if (m && m[module] !== undefined) mods.push(m);
-					}
-				}
-				return mods;
-			};
-			window.findRawModule = (module, silent) => {
-				for (let i in req.c) {
-					if (req.c.hasOwnProperty(i)) {
-						let m = req.c[i].exports;
-						if (m && m.__esModule && m.default && m.default[module] !== undefined) return req.c[i];
-						if (m && m[module] !== undefined) return req.c[i];
-					}
-				}
-				return null;
-			};
-			window.monkeyPatch = function (what, methodName, newFunc) {
-				if (!what || typeof what !== "object") return false;
-				const displayName =
-					what.displayName || what.name || what.constructor.displayName || what.constructor.name;
-				const origMethod = what[methodName];
-				const cancel = () => {
-					what[methodName] = origMethod;
-					return true;
-				};
-				what[methodName] = function () {
-					const data = {
-						thisObject: this,
-						methodArguments: arguments,
-						originalMethod: origMethod,
-						callOriginalMethod: () =>
-							(data.returnValue = data.originalMethod.apply(data.thisObject, data.methodArguments)),
-					};
-					return newFunc(data);
-				};
-				what[methodName].__monkeyPatched = true;
-				what[methodName].displayName = "patched " + (what[methodName].displayName || methodName);
-				what[methodName].unpatch = cancel;
-				return true;
-			};
 		</script>
 	</body>
 </html>
