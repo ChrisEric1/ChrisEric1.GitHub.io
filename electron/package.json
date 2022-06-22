@@ -5,7 +5,6 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "electron index.js",
-		"pack": "electron-builder --dir -w",
 		"dist": "electron-builder -w"
 	},
 	"productName": "Discord Bot Client",
