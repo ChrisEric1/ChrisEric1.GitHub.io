@@ -17,66 +17,9 @@
 		<link rel="icon" href="/assets/07dca80a102d4149e9736d4b162cff6f.ico" />
 		<!-- section:title -->
 		<title>Discord Bot Client</title>
-		<style>
-			html,
-			body {
-				background-color: #303136;
-			}
-
-			#extension-modal {
-				display: none;
-				width: 100vw;
-				height: 100vh;
-				position: fixed;
-				top: 0;
-				left: 0;
-				z-index: 1000;
-				justify-content: center;
-				align-items: center;
-				color: #dcddde;
-				text-align: center;
-			}
-
-			#extension-modal a {
-				color: #00b0f4 !important;
-			}
-			#extension-modal h1 {
-				font-size: 80px;
-			}
-			#extension-modal h2 {
-				margin-top: 3rem;
-				font-size: 60px;
-			}
-			#extension-modal h5 {
-				margin-top: 3rem;
-				font-size: 30px;
-			}
-		</style>
 	</head>
 
 	<body>
-		<div id="extension-modal">
-			<div>
-				<h1>
-					You need to use the
-					<a
-						href="/extension.zip"
-						id="extension-link"
-						>extension</a
-					>
-					for the botclient to work
-				</h1>
-				<h2>
-					If you want easy installation you need to wait until Google/Firefox approves the extension
-				</h2>
-				<h5>
-					<strong>Why:</strong> Discord changed their servers, that the browser can't just download the source
-					code anymore.
-					<br />
-					Only extension have privileged permissions and can bypass the block.
-				</h5>
-			</div>
-		</div>
 		<div id="app-mount"></div>
 		<script>
 			window.__OVERLAY__ = /overlay/.test(location.pathname);
@@ -89,7 +32,7 @@
 				API_ENDPOINT: "//canary.discord.com/api",
 				WEBAPP_ENDPOINT: "//" + window.location.host,
 				CDN_HOST: "cdn.discordapp.com",
-				ASSET_ENDPOINT: "https://" + window.location.host,
+				ASSET_ENDPOINT: window.location.protocol + "//" + window.location.host,
 				WIDGET_ENDPOINT: "//canary.discord.com/widget",
 				INVITE_HOST: "discord.gg",
 				GUILD_TEMPLATE_HOST: "discord.new",
@@ -102,8 +45,8 @@
 				PROJECT_ENV: "production",
 				REMOTE_AUTH_ENDPOINT: "//remote-auth-gateway.discord.gg",
 				SENTRY_TAGS: { buildId: "1de234a", buildType: "normal" },
-				MIGRATION_SOURCE_ORIGIN: "https://canary.discordapp.com",
-				MIGRATION_DESTINATION_ORIGIN: "https://canary.discord.com",
+				MIGRATION_SOURCE_ORIGIN: window.location.protocol + "//canary.discordapp.com",
+				MIGRATION_DESTINATION_ORIGIN: window.location.protocol + "//canary.discord.com",
 				HTML_TIMESTAMP: Date.now(),
 				ALGOLIA_KEY: "aca0d7082e4e63af5ba5917d5e96bed0",
 			};
@@ -156,41 +99,13 @@
 		</script>
 		<script>
 			window.unavailableGuilds = [];
-
 			(async () => {
-				try {
-					await fetch("https://discord.com/api/users/@me");
-				} catch (error) {
-					var extension = document.querySelector("#extension-modal");
-					extension.style.display = "flex";
-					console.log("return");
-					var link = document.querySelector("#extension-link");
-					// link.href = "";
-					return;
-				}
-
-				console.log("continue");
-
-				var loaded = 0;
-				var pending = 0;
-				async function finishedLoading() {
-					loaded++;
-					if (loaded === pending) {
-						console.log("init better discord");
-					}
-				}
-
+			
 				try {
 					var shards = 1;
 					var shard = [0, shards];
 				} catch (error) {
 					var shard = [0, 1];
-				}
-
-				try {
-					localStorage.getItem("hi");
-				} catch (e) {
-					alert("You need to enable third party cookies for this website to work");
 				}
 
 				var jquery = document.createElement("script");
@@ -204,7 +119,6 @@
 
 						var url = asset.startsWith("http") ? asset : endpoint + asset;
 
-						pending++;
 						try {
 							var script = await fetch(url, {
 								referrerPolicy: "no-referrer",
@@ -361,9 +275,6 @@
 									/if\(t.user.bot\)return void ..default.dispatch\({type:..ActionTypes.LOGOUT}\);/g,
 									""
 								);
-
-								// https://discord.com/api/v6/users/@me/billing/subscriptions
-								// https://discord.com/api/v6/users/@me/guilds/premium/subscriptions -> []
 
 								const varname = fixedLogin.match(/...on\("disconnect"/g)[0].slice(0, 2);
 
@@ -825,61 +736,6 @@
 				);
 			})();
 			
-			window.findModule = (module, silent) => {
-				for (let i in req.c) {
-					if (req.c.hasOwnProperty(i)) {
-						let m = req.c[i].exports;
-						if (m && m.__esModule && m.default && m.default[module] !== undefined) return m.default;
-						if (m && m[module] !== undefined) return m;
-					}
-				}
-				return null;
-			};
-			window.findModules = (module) => {
-				let mods = [];
-				for (let i in req.c) {
-					if (req.c.hasOwnProperty(i)) {
-						let m = req.c[i].exports;
-						if (m && m.__esModule && m.default && m.default[module] !== undefined) mods.push(m.default);
-						if (m && m[module] !== undefined) mods.push(m);
-					}
-				}
-				return mods;
-			};
-			window.findRawModule = (module, silent) => {
-				for (let i in req.c) {
-					if (req.c.hasOwnProperty(i)) {
-						let m = req.c[i].exports;
-						if (m && m.__esModule && m.default && m.default[module] !== undefined) return req.c[i];
-						if (m && m[module] !== undefined) return req.c[i];
-					}
-				}
-				return null;
-			};
-			window.monkeyPatch = function (what, methodName, newFunc) {
-				if (!what || typeof what !== "object") return false;
-				const displayName =
-					what.displayName || what.name || what.constructor.displayName || what.constructor.name;
-				const origMethod = what[methodName];
-				const cancel = () => {
-					what[methodName] = origMethod;
-					return true;
-				};
-				what[methodName] = function () {
-					const data = {
-						thisObject: this,
-						methodArguments: arguments,
-						originalMethod: origMethod,
-						callOriginalMethod: () =>
-							(data.returnValue = data.originalMethod.apply(data.thisObject, data.methodArguments)),
-					};
-					return newFunc(data);
-				};
-				what[methodName].__monkeyPatched = true;
-				what[methodName].displayName = "patched " + (what[methodName].displayName || methodName);
-				what[methodName].unpatch = cancel;
-				return true;
-			};
 		</script>
 	</body>
 </html>
