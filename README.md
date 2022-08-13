@@ -20,9 +20,9 @@ and run **npm i** and **node index.js**, and then run lightcord. If it gets stuc
 Now it should work with the last newest assets compatiable with lightcord.
 
 B. You may also compile lightcord, you need the modified source code http://github.com/ChrisEric1/Lightcord with its requirements like node.js
-and you need the patches http://github.com/ChrisEric1/ChrisEric1/archive/refs/heads/main.zip 
-Compile lightcord and then DO NOT copy settings.json since its not required when compiled. cd into the patches in a new cmd window, run **npm i && node index.js**
-and run lightcord. Thats it. 
+ ~~and you need the patches http://github.com/ChrisEric1/ChrisEric1/archive/refs/heads/main.zip~~ Compile lightcord and then ~~DO NOT copy settings.json since its not required when compiled. cd into the patches in a new cmd window, run **npm i && node index.js** and~~ run lightcord. Thats it. 
+
+C. Download and run the latest release from https://github.com/ChrisEric1/Lightcord/releases and run it WITHOUT ANY PATCHES NEEDED! Note you may need to close it and reopen if running for the first time due to a bug, and tabs don't currently work at the moment. 
 
 # FAQ
 
@@ -32,15 +32,15 @@ A: Discord blocks other sites using CORS and only extensions will work, you coul
 
 Q: Why the patches even if compiling?
 
-A: It run a local server which I didn't merge into the LC source (yet)
+A: ~~It run a local server which I didn't merge into the LC source (yet)~~ You don't need to have both anymore!
 
 Q: Why does the extension only work on http://chriseric1.github.io/ ?
 
-A: You can change it but for security reasons we keep it like this. We could also use a source detector but I am not likely to merge it tho.
+A: You can change it but for security reasons we keep it like this. We could also use a source detector but I am not likely to merge it tho (because of hacks if too many people install the extension).
 
 Q: Assets in this repo?
 
-A: Required by discord firewall so it even loads up at all. Similar to CORS, but its a CloudFlare FW
+A: Required by discord firewall so it even loads up at all. Similar to CORS, but its a CloudFlare FW (1020 IIRC?)
 
 Q: Antivirus flags your files
 
@@ -48,5 +48,5 @@ A: These files aren't signed at all, thats why.
 
 Q: Are you going to update the client?
 
-A: No, since I can't unless I knew how to but I don't, LC is as new as we are most likely going to get. 
+A: No, since I can't unless I knew how to but I don't, LC is as new as we are most likely going to get. But for the web, I at least tried to, but there were gateway problems so I left it as is.
 
