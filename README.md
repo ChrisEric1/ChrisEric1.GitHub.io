@@ -6,6 +6,8 @@ For web browser version, goto http://chriseric1.github.io/login and sideload the
 
 Note there isn't a working extension of any other source but this at the moment, and changing the site endpoint REQUIRES you to change the extension at the moment.
 
+If you are using Firefox and need the extension go here: https://github.com/ChrisEric1/ChrisEric1/releases Note that Firefox is known to be buggy for some reason, even when unsigned, stays at a white screen and disabling it makes it worse. To use it, Login without the extension, wait until loaded and then install it. When done, remove it completly from your browser. Refreshing the page can break it too, but moving around channels shouldn't.
+
 For lightcord
 
 A. You need to download the following 
