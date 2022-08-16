@@ -338,9 +338,10 @@ restricted_guilds: [],
 show_current_game: true,
 status: "online",
 stream_notifications_enabled: true,
-t.eme: "dark",
-t.mezone_offset: 0;
+t.theme: "dark",
+t.timezone_offset: 0;
 };
+
 							window.waitingReady = t;
 							if ((t.guilds[0] && !t.guilds[0].unavailable) || true) {
 								${varname}._events.dispatch("BOTREADY",window.waitingReady);
