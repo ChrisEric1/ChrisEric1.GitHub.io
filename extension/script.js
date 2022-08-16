@@ -22,17 +22,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
 		let header = details.requestHeaders.find((e) => e.name.toLowerCase() === "origin");
 		if (header) header.value = "https://discord.com";
 		else details.requestHeaders.push({ name: "Origin", value: "https://discord.com" });
-		if (
-			[
-				"https://discord.com/api/users/@me/library",
-				"https://discord.com/api/users/@me/guilds/premium/subscriptions",
-				"https://discord.com/api/science",
-			].includes(details.url) ||
-			details.url.includes("https://discord.com/api/users/@me/billing/trials/") ||
-			details.url.includes("https://discord.com/api/users/@me/applications/")
-		) {
-			return { cancel: true };
-		}
+
 		details.requestHeaders = details.requestHeaders.filter((x) => x.name.toLowerCase() !== "user-agent");
 
 		return { requestHeaders: details.requestHeaders };
