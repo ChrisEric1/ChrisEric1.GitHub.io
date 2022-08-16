@@ -40,17 +40,7 @@ async function createWindow() {
 
 	session.webRequest.onBeforeSendHeaders(filter, (details, callback) => {
 		details.requestHeaders["origin"] = "https://discord.com";
-		if (
-			[
-				"https://discord.com/api/users/@me/library",
-				"https://discord.com/api/users/@me/guilds/premium/subscriptions",
-				"https://discord.com/api/science",
-			].includes(details.url) ||
-			details.url.includes("https://discord.com/api/users/@me/billing/trials/") ||
-			details.url.includes("https://discord.com/api/users/@me/applications/")
-		) {
-			return callback({ cancel: true });
-		}
+
 		delete details.requestHeaders["User-Agent"];
 
 		callback({ requestHeaders: details.requestHeaders });
