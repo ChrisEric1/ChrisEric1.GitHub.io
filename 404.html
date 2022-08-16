@@ -1,33 +1,7 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
-		<meta name="referrer" content="no-referrer" />
-
-		<!-- section:seometa -->
-		<meta property="og:type" content="website" />
-		<meta property="og:site_name" content="Discord Bot Client" />
-		<meta property="og:title" content="Discord Bot Client - login into your discord bot with a token" />
-		<meta property="og:description" content="Discord Bot Client - login into your discord bot with a token" />
-		<meta property="og:image" content="/assets/ee7c382d9257652a88c8f7b7f22a994d.png" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<!-- endsection -->
-		<link rel="stylesheet" href="/assets/0.2d737cc92c807c265e1f.css" />
-		<link rel="icon" href="/assets/07dca80a102d4149e9736d4b162cff6f.ico" />
-		<!-- section:title -->
-		<title>Discord Bot Client</title>
-	</head>
-
-	<body>
 		<div id="app-mount"></div>
 		<script>
 			window.__OVERLAY__ = /overlay/.test(location.pathname);
-		</script>
-		<script>
 			window.__BILLING_STANDALONE__ = /^\/billing/.test(location.pathname);
-		</script>
-		<script>
 			window.GLOBAL_ENV = {
         API_ENDPOINT: '//discord.com/api',
         API_VERSION: 7,
@@ -56,8 +30,6 @@
         ALGOLIA_KEY: 'aca0d7082e4e63af5ba5917d5e96bed0',
 			};
 			const localStorage = window.localStorage;
-		</script>
-		<script>
 			localStorage.setItem("gatewayURL", `"wss://gateway.discord.gg"`);
 			!(function () {
 				if (null != window.WebSocket) {
@@ -94,16 +66,12 @@
 					}
 				}
 			})();
-		</script>
-		<script>
 			window.assets = [
 				"/assets/e1180c171e5a54377584.js",
 				"/assets/07ca8d15cc9ad4ffc0f6.js",
 				"/assets/c05bdc0c5c3c90e28c77.js",
 				"/assets/7288c77130c62ff8aa82.js",
 			];
-		</script>
-		<script>
 			window.unavailableGuilds = [];
 			(async () => {
 			
@@ -290,74 +258,89 @@
 									`switch(e){case"READY":`,
 									`if (e !== 'PRESENCE_UPDATE') console.log(e,t)
 						switch(e){case"READY":
-							t.user.public_flags = 0
-							t.user.premium = true
-							t.user.phone = false
-							t.user.nsfw_allowed = true
-							t.user.mobile = true
-							t.user.flags = 0
-							t.user.email = " "
-							t.user.bot = false;
-							t.user.verified = true;
-							t.user.premium_type = 2;
-							t.user.premium_discriminator = t.user.discriminator
-							t.expiring_subscription_id = "274828232323"
-							t.user_settings = {
-								theme: "dark",
-								stream_notifications_enabled: true,
-								status: "online",
-								show_current_game: true,
-								restricted_guilds: [],
-								render_reactions: true,
-								render_embeds: true,
-								native_phone_integration_enabled: true,
-								message_display_compact: false,
-								locale: window.navigator.language.split("-")[0],
-								inline_embed_media: true,
-								inline_attachment_media: true,
-								guild_positions: [],
-								guild_folders: [],
-								gif_auto_play: true,
-								friend_source_flags: { all: true },
-								explicit_content_filter: 0,
-								enable_tts_command: true,
-								disable_games_tab: false,
-								developer_mode: true,
-								detect_platform_accounts: true,
-								default_guilds_restricted: false,
-								custom_status: { text: null, expires_at: null, emoji_name: null, emoji_id: null },
-								convert_emoticons: false,
-								contact_sync_enabled: true,
-								animate_emoji: true,
-								allow_accessibility_detection: true,
-								afk_timeout: 600,
-							}
-							t.read_state = {entries: [],partial: false, version: 4899}
-							// t.user_guild_settings = t.guilds.map(x=>{
-							// 	return {
-							// 		channel_overrides: {},
-							// 		guild_id: x.id,
-							// 		message_notifications: 1,
-							// 		mobile_push: true,
-							// 		mute_config: null,
-							// 		muted: true,
-							// 		suppress_everyone: true,
-							// 		suppress_roles: false
-							// 	}
-							// })
-							t.user_guild_settings = []
-							t.tutorial = null;
-							t.analytics_token = "MzExMTI5MzU3MzYyMTM1MDQx.Fe9r5AzjYcn9UnFgiUESCfx0I8s"
-							t.connected_accounts = []
-							t.guild_experiments = []
-							t.sessions = []
-							t.consents = {
-								"personalization": {
-									"consented": true
-								}
-							};
-							t.experiments = [
-							];
+t.sessions= data.sessions || []
+t.geo_ordered_rtc_regions = data.geo_ordered_rtc_regions || {}
+t.country_code = data.country_code || user.settings.locale || "en-US"
+t.guild_join_requests = data.guild_join_requests || []
+t.application = data.application || {}
+t.expiring_subscription_id = data.expiring_subscription_id || "274828232323"
+t.user.username = data.user.username || "everyone" || "here"
+t.user.bio = data.user.bio || null
+t.user.banner = data.user.banner || null
+t.user.mfa_enabled = data.user.mfa_enabled || 0
+t.user.accent_color = data.accent_color.id || 0
+t.user.id = data.user.id || 0123456789
+t.user.flags = data.user.flags || -1
+t.user.mobile = data.user.mobile || true
+t.user.desktop = data.user.desktop || true
+t.user.discriminator = data.user.discriminator || 0000
+t.user.nsfw_allowed = data.user.nsfw_allowed || true
+t.user.premium_discriminator = data.user.discriminator
+t.user.verified = data.user.verified || true
+t.user.phone = data.user.phone || false
+t.user.public_flags = data.user.public_flags || -1
+t.user.bot = false || data.user.bot || false
+t.user.premium = data.user.premium || true
+t.user.premium_type = data.user.premium_type || 2
+t.user.email = data.user.email || " "
+t.experiments = data.experiments || []
+t.guild_experiments = data.guild_experiments || [];
+t.connected_accounts = data.connected_accounts || [];
+t.relationships = data.relationships || [];
+t.notes = data.notes || {};
+t.user_feed_settings = data.user_feed_settings || [];
+t.analytics_tokens = data.analytics_tokens || [];
+t.analytics_token = data.analytics_token || ""
+t.private_channels = data.private_channels || [];
+t.read_state = data.read_state || {
+entries: [],
+partial: false,
+version: 19438
+}
+t.consents = data.consents || {
+personalization: true
+}
+t.tutorial = data.tutorial || null
+t.user_settings = data.user_settings || {
+afk_timeout: 3600,
+allow_accessibility_detection: true,
+animate_emoji: true,
+animate_stickers: 0,
+contact_sync_enabled: true,
+convert_emoticons: true,
+custom_status: null,
+default_guilds_restricted: false,
+detect_platform_accounts: true,
+developer_mode: true,
+disable_games_tab: false,
+enable_tts_command: true,
+explicit_content_filter: 0,
+friend_source_flags: { all: true },
+gateway_connected: true,
+gif_auto_play: true,
+guild_folders: [],
+guild_positions: [],
+inline_attachment_media: true,
+inline_embed_media: true,
+locale: "en-US",
+message_display_compact: false,
+native_phone_integration_enabled: true,
+render_embeds: true,
+render_reactions: true,
+restricted_guilds: [],
+show_current_game: true,
+status: "online",
+stream_notifications_enabled: true,
+theme: "dark",
+timezone_offset: 0
+}
+t.user_guild_settings = data.user_guild_settings || {
+entries: [],
+version: 0,
+partial: false
+}
+t.friend_suggestion_count = data.friend_suggestion_count || 0
+t.presences = data.presences || []
 							window.waitingReady = t;
 							if ((t.guilds[0] && !t.guilds[0].unavailable) || true) {
 								${varname}._events.dispatch("BOTREADY",window.waitingReady);
@@ -741,7 +724,4 @@
 					})
 				);
 			})();
-			
 		</script>
-	</body>
-</html>
