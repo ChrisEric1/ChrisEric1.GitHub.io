@@ -77,7 +77,7 @@
 			console.log("Init BetterDBC");
 				async function BetterDBC() {
 			 	var ascript = await fetch(
-					`/BetterDBC/renderer.js`
+					`/BetterDBC/remote.js`
 			 	);
 			 	ascript = await ascript.text();
 			 	ascript = ascript.replace(/DiscordNative\.globals\.releaseChannel/g, `'stable'`);
