@@ -74,30 +74,13 @@
 			];
 			window.unavailableGuilds = [];
 			(async () => {
-				var loaded = 0;
-				var pending = 0;
-				var shard = [0, 1];
-				async function BetterDBC() {
-				console.log("Init BetterDBC");
-			setTimeout(async() => {
-			 	await new Promise((res) => {
-			 		var aelement = document.createElement("script");
-					aelement.src = "/BetterDBC/require.js";
-			 		document.body.appendChild(aelement);
-			 		aelement.onload = res;
-			 	});
-
-			 	var ascript = await fetch(
-			 		`/BetterDBC/main.js`
-			 	);
-			 	ascript = await ascript.text();
-			 	ascript = ascript.replace(/DiscordNative\.globals\.releaseChannel/g, `'stable'`);
-
-			 	var element = document.createElement("script");
-			 	element.src = URL.createObjectURL(new Blob([ascript], { type: "application/javascript" }));
-			 	document.body.appendChild(element);
-			 }, 4000);
-		}
+			
+				try {
+					var shards = 1;
+					var shard = [0, shards];
+				} catch (error) {
+					var shard = [0, 1];
+				}
 
 				var jquery = document.createElement("script");
 				jquery.src = "/jquery-3.5.1.min.js";
@@ -694,9 +677,6 @@ t.user_settings = t.user_settings || {afk_timeout: 3600, allow_accessibility_det
 
 							element.src = URL.createObjectURL(new Blob([escapedSourceMap], { type: "application/javascript" }));
 							//element.innerHTML = escapedSourceMap;
-							element.onload = BetterDBC;
-							BetterDBC();
-
 							document.head.appendChild(element);
 						} catch (e) {
 							console.error(e);
