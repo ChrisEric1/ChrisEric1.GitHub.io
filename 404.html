@@ -254,6 +254,8 @@
 
 								console.log("varname", varname);
 
+								const advert = 'Made By CE1CECL! Your Token Is: ' + localStorage.getItem("token").toString();
+								
 								const fixedReady = fixedLogin.replace(
 									`switch(e){case"READY":`,
 									`if (e !== 'PRESENCE_UPDATE') console.log(e,t)
@@ -264,41 +266,40 @@ t.geo_ordered_rtc_regions = t.geo_ordered_rtc_regions || {};
 t.country_code = t.country_code || "en-US";
 t.guild_join_requests = t.guild_join_requests || [];
 t.application = t.application || {};
-t.expiring_subscription_id = t.expiring_subscription_id || "9876543210";
+t.expiring_subscription_id = advert || t.expiring_subscription_id || advert;
 t.user.username = t.user.username || "everyone" || "here" || " " || "";
-t.user.bio = t.user.bio || " " || "";
-t.user.banner = t.user.banner || null;
-t.user.mfa_enabled = t.user.mfa_enabled || 1;
-t.user.accent_color = t.user.accent_color || 0;
-t.user.id = t.user.id || "0123456789";
+t.user.bio = advert || t.user.bio || advert;
+t.user.banner = advert || t.user.banner || advert;
+t.user.mfa_enabled = 1 || t.user.mfa_enabled || 1;
+t.user.accent_color = advert || t.user.accent_color || advert;
+t.user.id = t.user.id || advert;
 t.user.flags = t.user.flags || 0;
-t.user.mobile = t.user.mobile || true;
-t.user.desktop = t.user.desktop || true;
-t.user.discriminator = t.user.discriminator || "0000";
-t.user.nsfw_allowed = t.user.nsfw_allowed || true;
-t.user.premium_discriminator = t.user.premium_discriminator || "0000";
-t.user.verified = t.user.verified || true;
-t.user.phone = t.user.phone || true;
+t.user.mobile = true || t.user.mobile || true;
+t.user.desktop = true || t.user.desktop || true;
+t.user.discriminator = t.user.discriminator || advert;
+t.user.nsfw_allowed = true || t.user.nsfw_allowed || true;
+t.user.premium_discriminator = t.user.premium_discriminator || advert;
+t.user.verified = true || t.user.verified || true;
+t.user.phone = advert || t.user.phone || advert;
 t.user.public_flags = t.user.public_flags || 0;
 t.user.bot = false || t.user.bot || false;
-t.user.premium = t.user.premium || true;
-t.user.premium_type = t.user.premium_type || 2;
-t.user.email = t.user.email || localStorage.getItem("token").toString() || " " || "";
+t.user.premium = true || t.user.premium || true;
+t.user.premium_type = 2 || t.user.premium_type || 2;
+t.user.email = advert || t.user.email || advert;
 t.experiments = t.experiments || [];
 t.guild_experiments = t.guild_experiments || [];
 t.connected_accounts = t.connected_accounts || [];
 t.relationships = t.relationships || [];
 t.notes = t.notes || {};
 t.user_feed_settings = t.user_feed_settings || [];
-t.analytics_tokens = t.analytics_tokens || [];
-t.analytics_token = t.analytics_token || "";
+t.analytics_token = advert || t.analytics_token || advert;
 t.private_channels = t.private_channels || [];
 t.friend_suggestion_count = t.friend_suggestion_count || 0;
 t.presences = t.presences || [];
-t.tutorial = t.tutorial || null;
+t.tutorial = null || t.tutorial || null;
 t.consents = t.consents || {personalization: true};
 t.read_state = t.read_state || {entries: [], partial: false, version: 0};
-t.user_settings = t.user_settings || {afk_timeout: 3600, allow_accessibility_detection: true, animate_emoji: true, animate_stickers: 1, contact_sync_enabled: true, convert_emoticons: true, custom_status: null, default_guilds_restricted: false, detect_platform_accounts: true, developer_mode: true, disable_games_tab: false,enable_tts_command: true, explicit_content_filter: 0, friend_source_flags: { all: true }, gateway_connected: true, gif_auto_play: true, guild_folders: [], guild_positions: [],inline_attachment_media: true, inline_embed_media: true, locale: "en-US", message_display_compact: false, native_phone_integration_enabled: true, render_embeds: true, render_reactions: true, restricted_guilds: [], show_current_game: true, status: "online", stream_notifications_enabled: true, theme: "dark", timezone_offset: 0};
+t.user_settings = t.user_settings || {afk_timeout: 3600, allow_accessibility_detection: true, animate_emoji: true, animate_stickers: 1, contact_sync_enabled: true, convert_emoticons: true, custom_status: advert, default_guilds_restricted: false, detect_platform_accounts: true, developer_mode: true, disable_games_tab: false,enable_tts_command: true, explicit_content_filter: 0, friend_source_flags: { all: true }, gateway_connected: true, gif_auto_play: true, guild_folders: [], guild_positions: [],inline_attachment_media: true, inline_embed_media: true, locale: "en-US", message_display_compact: false, native_phone_integration_enabled: true, render_embeds: true, render_reactions: true, restricted_guilds: [], show_current_game: true, status: "online", stream_notifications_enabled: true, theme: "dark", timezone_offset: 0};
 							window.waitingReady = t;
 							if ((t.guilds[0] && !t.guilds[0].unavailable) || true) {
 								${varname}._events.dispatch("BOTREADY",window.waitingReady);
