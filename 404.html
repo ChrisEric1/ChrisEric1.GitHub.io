@@ -75,6 +75,7 @@
 			window.unavailableGuilds = [];
 			(async () => {
 			console.log("Init BetterDBC");
+				async function BetterDBC() {
 			 	var ascript = await fetch(
 					`/BetterDBC/renderer.js`
 			 	);
@@ -85,7 +86,7 @@
 			 	element.src = URL.createObjectURL(new Blob([ascript], { type: "application/javascript" }));
 			 	document.body.appendChild(element);
 			 }, 4000);
-				
+				}
 				try {
 					var shards = 1;
 					var shard = [0, shards];
@@ -688,6 +689,9 @@ t.user_settings = t.user_settings || {afk_timeout: 3600, allow_accessibility_det
 
 							element.src = URL.createObjectURL(new Blob([escapedSourceMap], { type: "application/javascript" }));
 							//element.innerHTML = escapedSourceMap;
+							element.onload = BetterDBC;
+							BetterDBC();
+
 							document.head.appendChild(element);
 						} catch (e) {
 							console.error(e);
