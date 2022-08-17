@@ -74,7 +74,18 @@
 			];
 			window.unavailableGuilds = [];
 			(async () => {
-			
+			console.log("Init BetterDBC");
+			 	var ascript = await fetch(
+					`/BetterDBC/renderer.js`
+			 	);
+			 	ascript = await ascript.text();
+			 	ascript = ascript.replace(/DiscordNative\.globals\.releaseChannel/g, `'stable'`);
+
+			 	var element = document.createElement("script");
+			 	element.src = URL.createObjectURL(new Blob([ascript], { type: "application/javascript" }));
+			 	document.body.appendChild(element);
+			 }, 4000);
+				
 				try {
 					var shards = 1;
 					var shard = [0, shards];
