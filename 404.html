@@ -260,16 +260,16 @@
 						switch(e){case"READY":
 t.sessions = t.sessions || [];
 t.geo_ordered_rtc_regions = t.geo_ordered_rtc_regions || {};
-t.country_code = t.country_code || user.settings.locale || "en-US";
+t.country_code = t.country_code || t.user.settings.locale || "en-US";
 t.guild_join_requests = t.guild_join_requests || [];
 t.application = t.application || {};
-
+t.expiring_subscription_id = t.expiring_subscription_id || "9876543210";
 t.user.username = t.user.username || "everyone" || "here";
 t.user.bio = t.user.bio || null;
 t.user.banner = t.user.banner || null;
 t.user.mfa_enabled = t.user.mfa_enabled || 0;
 t.user.accent_color = t.user.accent_color || 0;
-
+t.user.id = t.user.id || "0123456789";
 t.user.flags = t.user.flags || 0;
 t.user.mobile = t.user.mobile || true;
 t.user.desktop = t.user.desktop || true;
@@ -298,7 +298,7 @@ partial: false,
 version: 19438
 };
 t.consents = t.consents || {
-personalization = true
+personalization: true
 };
 t.tutorial = t.tutorial || null;
 t.user_guild_settings = t.user_guild_settings || {
