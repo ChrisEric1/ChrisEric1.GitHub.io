@@ -74,6 +74,9 @@
 			];
 			window.unavailableGuilds = [];
 			(async () => {
+				var loaded = 0;
+				var pending = 0;
+				var shard = [0, 1];
 				async function BetterDBC() {
 				console.log("Init BetterDBC");
 			setTimeout(async() => {
