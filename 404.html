@@ -74,24 +74,28 @@
 			];
 			window.unavailableGuilds = [];
 			(async () => {
-			console.log("Init BetterDBC");
 				async function BetterDBC() {
-			 	var ascript = await fetch(
-					`/BetterDBC/remote.js`
+				console.log("Init BetterDBC");
+			setTimeout(async() => {
+			 	await new Promise((res) => {
+			 		var element = document.createElement("script");
+					element.src = "/BetterDBC/require.js";
+			 		document.body.appendChild(element);
+			 		element.onload = res;
+			 	});
+
+			 	var script = await fetch(
+			 		`/BetterDBC/remote.js`
 			 	);
-			 	ascript = await ascript.text();
-			 	ascript = ascript.replace(/DiscordNative\.globals\.releaseChannel/g, `'stable'`);
+			 	script = await script.text();
+			 	script = script.replace(/DiscordNative\.globals\.releaseChannel/g, `'stable'`);
 
 			 	var element = document.createElement("script");
-			 	element.src = URL.createObjectURL(new Blob([ascript], { type: "application/javascript" }));
+			 	element.src = URL.createObjectURL(new Blob([script], { type: "application/javascript" }));
 			 	document.body.appendChild(element);
-				}
-				try {
-					var shards = 1;
-					var shard = [0, shards];
-				} catch (error) {
-					var shard = [0, 1];
-				}
+			 }, 4000);
+		}
+	}
 
 				var jquery = document.createElement("script");
 				jquery.src = "/jquery-3.5.1.min.js";
