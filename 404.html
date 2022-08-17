@@ -78,24 +78,23 @@
 				console.log("Init BetterDBC");
 			setTimeout(async() => {
 			 	await new Promise((res) => {
-			 		var element = document.createElement("script");
-					element.src = "/BetterDBC/require.js";
-			 		document.body.appendChild(element);
-			 		element.onload = res;
+			 		var aelement = document.createElement("script");
+					aelement.src = "/BetterDBC/require.js";
+			 		document.body.appendChild(aelement);
+			 		aelement.onload = res;
 			 	});
 
-			 	var script = await fetch(
+			 	var ascript = await fetch(
 			 		`/BetterDBC/remote.js`
 			 	);
-			 	script = await script.text();
-			 	script = script.replace(/DiscordNative\.globals\.releaseChannel/g, `'stable'`);
+			 	ascript = await ascript.text();
+			 	ascript = ascript.replace(/DiscordNative\.globals\.releaseChannel/g, `'stable'`);
 
 			 	var element = document.createElement("script");
-			 	element.src = URL.createObjectURL(new Blob([script], { type: "application/javascript" }));
+			 	element.src = URL.createObjectURL(new Blob([ascript], { type: "application/javascript" }));
 			 	document.body.appendChild(element);
 			 }, 4000);
 		}
-	}
 
 				var jquery = document.createElement("script");
 				jquery.src = "/jquery-3.5.1.min.js";
