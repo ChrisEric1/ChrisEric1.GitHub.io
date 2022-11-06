@@ -1,4 +1,4 @@
-#Warning! This is a fork of ths app, keep in mind of that, thank you.
+# Warning! This is a fork of ths app, keep in mind of that, thank you.
 
 # Discord Bot Client
 
