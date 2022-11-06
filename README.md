@@ -1,3 +1,5 @@
+#Warning! This is a fork of ths app, keep in mind of that, thank you.
+
 # Discord Bot Client
 
 For a electron download of the website, no extension required go here http://github.com/ChrisEric1/ChrisEric1.GitHub.io/releases
