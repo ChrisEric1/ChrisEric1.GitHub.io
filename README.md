@@ -42,7 +42,7 @@ A: You can change it but for security reasons we keep it like this. We could als
 
 Q: Assets in this repo?
 
-A: Required by discord firewall so it even loads up at all. Similar to CORS, but its a CloudFlare Firewall (102)
+A: Required by discord firewall so it even loads up at all. Similar to CORS, but its a CloudFlare Firewall (1020)
 
 Q: Antivirus flags your files
 
