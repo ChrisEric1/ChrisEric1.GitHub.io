@@ -30,7 +30,7 @@ C. Download and run the latest release from https://github.com/ChrisEric1/Lightc
 
 Q: Why do I need a extension?
 
-A: Discord blocks other sites using CORS and only extensions will work, you could also host a CORD proxy, which isn't recommended since the person hosting is more likely to get banned rather than the person actually using it
+A: Discord blocks other sites using CORS and only extensions will work, you could also host a CORS proxy, which isn't recommended since the person hosting is more likely to get banned rather than the person actually using it
 
 Q: Why the patches even if compiling?
 
@@ -42,7 +42,7 @@ A: You can change it but for security reasons we keep it like this. We could als
 
 Q: Assets in this repo?
 
-A: Required by discord firewall so it even loads up at all. Similar to CORS, but its a CloudFlare FW (1020 IIRC?)
+A: Required by discord firewall so it even loads up at all. Similar to CORS, but its a CloudFlare Firewall (102)
 
 Q: Antivirus flags your files
 
