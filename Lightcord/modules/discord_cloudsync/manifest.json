@@ -1,0 +1,7 @@
+{
+  "files": [
+    "discord_cloudsync.node", 
+    "index.js", 
+    "manifest.json"
+  ]
+}

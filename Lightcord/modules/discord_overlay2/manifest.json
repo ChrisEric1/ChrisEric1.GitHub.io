@@ -1,0 +1,14 @@
+{
+  "files": [
+    "discord_overlay2.node", 
+    "host.js", 
+    "overlay_module.js", 
+    "standalone_host.js", 
+    "Backoff.js", 
+    "FeatureFlags.js", 
+    "securityUtils.js", 
+    "start.html", 
+    "index.js", 
+    "manifest.json"
+  ]
+}

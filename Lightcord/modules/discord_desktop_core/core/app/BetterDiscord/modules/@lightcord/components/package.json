@@ -1,0 +1,11 @@
+{
+  "name": "@lightcord/components",
+  "version": "1.0.0",
+  "description": "Components that can be found inside Ligthcord Api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lightcord",
+  "license": "ISC"
+}

@@ -1,5 +1,7 @@
 # Discord Bot Client
 
+# THIS README NEEDS A REDO, BELOW ARE REFERENCES TO OUTDATED INFORMATION FOR THE REWRITE
+
 For a electron download of the website, no extension required go here http://github.com/ChrisEric1/ChrisEric1.GitHub.io/releases
 
 For web browser version, goto http://chriseric1.github.io/login and sideload the extension in chrome http://chriseric1.github.io/extension.zip

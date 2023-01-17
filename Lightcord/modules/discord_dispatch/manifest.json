@@ -1,0 +1,7 @@
+{
+  "files": [
+    "discord_dispatch.node", 
+    "index.js", 
+    "manifest.json"
+  ]
+}

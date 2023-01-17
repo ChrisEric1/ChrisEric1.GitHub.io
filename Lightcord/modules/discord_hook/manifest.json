@@ -1,0 +1,13 @@
+{
+  "files": [
+    "discord_hook.node", 
+    "9981ab6e5e2\\DiscordHook.dll", 
+    "9981ab6e5e2\\DiscordHook64.dll", 
+    "9981ab6e5e2\\DiscordHookHelper.exe", 
+    "9981ab6e5e2\\DiscordHookHelper64.exe", 
+    "9981ab6e5e2\\discord_overlay_sdk_x86.dll", 
+    "9981ab6e5e2\\discord_overlay_sdk_x64.dll", 
+    "index.js", 
+    "manifest.json"
+  ]
+}

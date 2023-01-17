@@ -1,0 +1,70 @@
+---
+appId: com.aiko.Lightcord.Lightcord
+productName: Lightcord
+remoteBuild: false
+directories:
+  app: distApp
+  output: builds
+# This is to get around the bug in electron-builder with not including nested node_modules.
+afterPack: "scripts/afterpack.js"
+win:
+  artifactName: ${name}-win32-${arch}.${ext}
+  target:
+  - target: zip
+    arch:
+    - ia32
+  - target: portable
+    arch:
+    - ia32
+  icon: discord.ico
+  publisherName: Lightcord
+  files:
+  - "**/*"
+  - "!**/*.ts"
+  - "!**/*.so"
+  - "!**/*.4"
+  - "!**/*.dylib"
+  - "!**/*_darwin.node"
+  - "!**/*_linux.node"
+  asarUnpack: 
+  - "**/*.node"
+  - "**/*.dll"
+linux:
+  artifactName: ${name}-linux-${arch}.${ext}
+  target:
+  - target: zip
+    arch:
+    - x64
+  - target: AppImage
+    arch:
+    - x64
+  icon: discord.png
+  files:
+  - "**/*"
+  - "!**/*.ts"
+  - "!**/*.dll"
+  - "!**/*.dylib"
+  - "!**/discord*.node"
+  - "**/*_linux.node"
+  asarUnpack: 
+  - "**/*_linux.node"
+  - "**/*.so.4"
+mac:
+  artifactName: ${name}-darwin-x64.${ext}
+  target:
+  - target: zip
+    arch:
+    - x64
+  icon: discord.icns
+  files:
+  - "**/*"
+  - "!**/*.ts"
+  - "!**/*.dll"
+  - "!**/*.so"
+  - "!**/*.4"
+  - "!**/discord*.node"
+  - "**/*_darwin.node"
+  asarUnpack:
+  - "**/*_darwin.node"
+  - "**/*.dylib"
+

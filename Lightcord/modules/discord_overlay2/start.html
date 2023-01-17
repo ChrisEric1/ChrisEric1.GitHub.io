@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Discord Overlay</title>
+  </head>
+  <body>
+    <div id="__OVERLAY__SENTINEL__"/>
+    <div style="background-color:rgba(255,0,255,0.3);width:100px;height:100px;position:absolute;top:10px;left:10px;"></div>
+    <script>
+      window.__OVERLAY__ = true;
+      const Overlay = DiscordNative.nativeModules.requireModule('discord_overlay2');
+      window.addEventListener('load', function() {
+        Overlay.rendererStarted();
+      });
+    </script>
+  </body>
+</html>

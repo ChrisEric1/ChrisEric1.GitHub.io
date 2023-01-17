@@ -1,0 +1,54 @@
+{
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "plugins": [
+        "react"
+    ],
+	"env": {
+        "browser": true,
+        "node": true,
+        "jquery": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 8,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "semi": 2,
+        "space-infix-ops": ["error", {"int32Hint": false}],
+        "quotes": ["error", "double", {"allowTemplateLiterals": true}],
+        "no-console": 0,
+        "brace-style": ["error", "stroustrup", {"allowSingleLine": true}],
+        "keyword-spacing": 2,
+        "no-else-return": 2,
+        "curly": ["error", "multi-line", "consistent"],
+        "dot-notation": 2,
+        "yoda": 2,
+        "linebreak-style": ["error", "windows"],
+        "quote-props": ["error", "consistent-as-needed", {"keywords": true}],
+        "object-curly-spacing": ["error", "never", { "objectsInObjects": false }],
+        "no-var": "error",
+        "prefer-const": "error",
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "react/prop-types": "off",
+        "react/jsx-no-target-blank": "error",
+        "react/jsx-key": "off"
+    },
+    "globals": {
+        "webpackJsonp": false,
+        "Proxy": false,
+        "Set": false,
+        "WeakMap": false,
+        "Promise": false,
+        "ace": false,
+        "Reflect": false,
+        "Array": false,
+        "DiscordNative": false,
+        "self": "off",
+        "name": "off",
+        "__non_webpack_require__": false
+    }
+}

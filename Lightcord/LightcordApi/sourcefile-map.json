@@ -1,0 +1,6 @@
+[
+    {
+      "pattern": "^lightcordapi/src",
+      "replace": "https://github.com/Lightcord/Lightcord/blob/master/LightcordApi/src"
+    }
+  ]

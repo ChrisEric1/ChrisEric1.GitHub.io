@@ -1,0 +1,11 @@
+{
+  "files": [
+    "discord_modules.node", 
+    "ceed6bb952\\2\\discord_game_sdk_x86.dll", 
+    "ceed6bb952\\2\\discord_game_sdk_x64.dll", 
+    "ceed6bb952\\discord_aegis_x86.dll", 
+    "ceed6bb952\\discord_aegis_x64.dll", 
+    "index.js", 
+    "manifest.json"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+	"name": "discord-bot-client",
+	"version": "1.0.0",
+	"description": "Discord Bot Client - login into discord with a bot token",
+	"main": "electron.DBC.js",
+	"scripts": {
+		"start-lightcord-patch": "node LCP.DBC.js",
+		"start-electron": "electron electron.DBC.js",
+		"dist": "electron-builder -w"
+	},
+	"productName": "Discord Bot Client",
+	"appId": "com.electron.discord-bot-client",
+	"devDependencies": {
+		"electron": "9.1.2",
+		"electron-builder": "22.8.0"
+	},
+	"build": {
+		"win": {
+			"target": [
+				{
+					"target": "portable",
+					"arch": [
+						"ia32"
+					]
+				}
+			],
+			"icon": "buildResources/icon.png"
+		}
+	},
+	"dependencies": {
+		"btoa": "1.2.1",
+		"node-fetch": "2.6.0",
+		"express": "^4.18.1",
+		"fs": "^0.0.1-security",
+		"path": "^0.12.7",
+		"request": "^2.88.2"
+	}
+}

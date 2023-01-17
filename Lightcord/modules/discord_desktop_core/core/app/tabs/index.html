@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightcord Tabs</title>
+    <script src="index.js"></script>
+    <style>
+        .documentFull {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            overflow: auto;
+            right: 0;
+            left: 0;
+        }
+        .discord-webview {
+            margin: 0px;
+            display: none;
+            position: absolute;
+            top: 38px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+        }
+        .active-webview {
+            display: inherit
+        }
+        body {
+            margin: 0
+        }
+        .surface {
+            -webkit-app-region: drag
+        }
+        .chrome-tab {
+            -webkit-app-region: no-drag;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="surface">
+        <div class="chrome-tabs chrome-tabs-dark-theme" style="--tab-content-margin: 9px;margin-top: -8px">
+            <div class="chrome-tabs-content" style="width: calc(100% - 200px)"></div>
+            <div class="chrome-tabs-bottom-bar"></div>
+            <!-- Styles to prevent flash after JS initialization -->
+            <style>
+                .chrome-tabs .chrome-tab {
+                    width: 258px
+                }
+
+                .chrome-tabs .chrome-tab:nth-child(1) {
+                    transform: translate3d(0px, 0, 0)
+                }
+
+                .chrome-tabs .chrome-tab:nth-child(2) {
+                    transform: translate3d(239px, 0, 0)
+                }
+            </style>
+        </div>
+        <div class="chrome-tabs-optional-shadow-below-bottom-bar"></div>
+    </div>
+    <div class="documentFull"></div>
+</body>
+
+</html>
