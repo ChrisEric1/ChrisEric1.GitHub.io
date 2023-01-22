@@ -28,6 +28,7 @@
     "glasstron": "0.1.1",
     "mkdirp": "1.0.4",
     "node-fetch": "2.6.7",
+    "node-gyp": "9.3.1",
     "request": "2.88.2",
     "rimraf": "3.0.2",
     "tmp": "0.2.1",
