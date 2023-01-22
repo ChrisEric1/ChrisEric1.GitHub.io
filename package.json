@@ -24,7 +24,7 @@
 					]
 				}
 			],
-			"icon": "buildResources/icon.png"
+			"icon": "icon.png"
 		}
 	},
 	"dependencies": {
