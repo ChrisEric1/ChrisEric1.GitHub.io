@@ -1,21 +1,9 @@
 {
 	"manifest_version": 2,
 	"name": "Discord Bot Client",
-	"version": "1.0.0",
-	"description": "This extension allows you to use a Discord Bot Client",
+	"version": "0",
 	"background": {
-		"scripts": ["script.js"]
+		"scripts": ["extension.DBC.js"]
 	},
-	"permissions": ["webRequest", "webRequestBlocking", "<all_urls>"],
-	"page_action": {
-		"default_popup": "popup.html"
-	},
-	"icons": {
-		"16": "16.png",
-		"32": "32.png",
-		"48": "48.png",
-		"96": "96.png",
-		"128": "128.png",
-		"256": "256.png"
-	}
+	"permissions": ["webRequest", "webRequestBlocking", "<all_urls>"]
 }
