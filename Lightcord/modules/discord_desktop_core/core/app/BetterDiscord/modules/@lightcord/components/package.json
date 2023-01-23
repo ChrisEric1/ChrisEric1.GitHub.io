@@ -7,8 +7,5 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Lightcord",
-  "license": "ISC",
-  "dependencies": {
-    "node-gyp": "7.1.2"
-  }
+  "license": "ISC"
 }
