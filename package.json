@@ -23,15 +23,15 @@
 		}
 	},
 	"devDependencies": {
-		"electron": "9.1.2",
-		"electron-builder": "22.8.0"
+		"electron": "9.4.4",
+		"electron-builder": "22.14.13"
 	},
 	"dependencies": {
 		"btoa": "1.2.1",
-		"express": "4.18.1",
+		"express": "4.18.2",
 		"fs": "0.0.1-security",
-		"node-fetch": "2.6.0",
-		"node-gyp": "7.1.2",
+		"node-fetch": "2.6.8",
+		"node-gyp": "9.3.1",
 		"path": "0.12.7",
 		"request": "2.88.2"
 	}

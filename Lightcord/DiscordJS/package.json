@@ -10,10 +10,11 @@
   "author": "jeanouina",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/collection": "0.1.5"
+    "@discordjs/collection": "0.1.5",
+    "node-gyp": "9.3.1"
   },
   "devDependencies": {
-    "ts-loader": "^7.0.5",
-    "typescript": "^3.9.5"
+    "ts-loader": "7.0.5",
+    "typescript": "3.9.10"
   }
 }
