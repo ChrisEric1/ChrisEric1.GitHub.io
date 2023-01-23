@@ -9,6 +9,6 @@
   "author": "Lightcord",
   "license": "ISC",
   "dependencies": {
-    "node-gyp": "9.3.1"
+    "node-gyp": "7.1.2"
   }
 }
