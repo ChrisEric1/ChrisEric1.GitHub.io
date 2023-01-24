@@ -23,6 +23,7 @@
 		}
 	},
 	"devDependencies": {
+		"@types/node": "12.12.39",
 		"electron": "9.4.4",
 		"electron-builder": "22.14.13"
 	},

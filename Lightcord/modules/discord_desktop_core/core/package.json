@@ -17,5 +17,8 @@
     "rimraf": "2.7.1",
     "safe-buffer": "5.2.1",
     "yauzl": "2.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "12.12.39"
   }
 }
