@@ -8,9 +8,6 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "node-gyp": "9.3.1"
-  },
   "devDependencies": {
     "@types/node": "12.12.39"
   }

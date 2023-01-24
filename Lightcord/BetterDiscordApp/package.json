@@ -34,8 +34,5 @@
         "clean-css": "4.2.4",
         "webpack": "4.46.0",
         "webpack-cli": "3.3.12"
-    },
-    "dependencies": {
-        "node-gyp": "9.3.1"
     }
 }

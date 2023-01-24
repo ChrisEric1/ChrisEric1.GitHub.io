@@ -10,8 +10,7 @@
   "author": "jeanouina",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/collection": "0.1.5",
-    "node-gyp": "9.3.1"
+    "@discordjs/collection": "0.1.5"
   },
   "devDependencies": {
     "@types/node": "12.12.39",
