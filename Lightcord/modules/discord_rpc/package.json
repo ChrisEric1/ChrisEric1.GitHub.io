@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "node-gyp": "7.1.2",
     "ws": "7.5.9"
   },
   "scripts": {

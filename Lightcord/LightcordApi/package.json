@@ -40,5 +40,8 @@
     "webpack-cli": "3.3.12"
   },
   "types": "./types/index.ts",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "node-gyp": "7.1.2"
+  }
 }

@@ -10,5 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "12.12.39"
+  },
+  "dependencies": {
+    "node-gyp": "7.1.2"
   }
 }

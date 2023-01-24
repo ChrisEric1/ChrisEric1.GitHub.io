@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "node-gyp": "7.1.2",
     "yargs": "16.2.0"
   },
   "devDependencies": {

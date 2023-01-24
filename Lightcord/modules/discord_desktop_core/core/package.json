@@ -11,6 +11,7 @@
     "localstorage-polyfill": "github:JeanOUINA/localstorage-polyfill",
     "lodash": "4.17.21",
     "mkdirp": "1.0.4",
+    "node-gyp": "7.1.2",
     "promise.allsettled": "1.0.6",
     "request": "2.88.2",
     "rimraf": "2.7.1",
