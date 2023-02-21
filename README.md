@@ -1,10 +1,8 @@
 # Discord Bot Client
 
-# THIS README NEEDS A REDO, BELOW ARE REFERENCES TO OUTDATED INFORMATION FOR THE REWRITE
-
 For a electron download of the website, no extension required go here http://github.com/ChrisEric1/ChrisEric1.GitHub.io/releases
 
-For web browser version, goto http://chriseric1.github.io/login and sideload the extension in chrome http://chriseric1.github.io/extension.zip
+For web browser version, goto http://chriseric1.github.io/login and sideload the extension in chrome http://github.com/ChrisEric1/ChrisEric1.GitHub.io/archive/refs/heads/ce1cecl.zip
 
 Note there isn't a working extension of any other source but this at the moment, and changing the site endpoint REQUIRES you to change the extension at the moment.
 
@@ -23,8 +21,7 @@ Then unzip the patches, copy settings.json to "%APPDATA%\lightcord\settings.json
 and run **npm i** and **node index.js**, and then run lightcord. If it gets stuck, Completly close it out and run it again. 
 Now it should work with the last newest assets compatiable with lightcord.
 
-B. You may also compile lightcord, you need the modified source code http://github.com/ChrisEric1/Lightcord with its requirements like node.js
- ~~and you need the patches http://github.com/ChrisEric1/ChrisEric1/archive/refs/heads/main.zip~~ Compile lightcord and then ~~DO NOT copy settings.json since its not required when compiled. cd into the patches in a new cmd window, run **npm i && node index.js** and~~ run lightcord. Thats it. 
+B. You may also compile lightcord, you need the modified source code http://github.com/ChrisEric1/Lightcord with its requirements like node.js Compile lightcord and then run lightcord. Thats it. 
 
 C. Download and run the latest release from https://github.com/ChrisEric1/Lightcord/releases and run it WITHOUT ANY PATCHES NEEDED! Note you may need to close it and reopen if running for the first time due to a bug, and tabs don't currently work at the moment. 
 
@@ -33,10 +30,6 @@ C. Download and run the latest release from https://github.com/ChrisEric1/Lightc
 Q: Why do I need a extension?
 
 A: Discord blocks other sites using CORS and only extensions will work, you could also host a CORS proxy, which isn't recommended since the person hosting is more likely to get banned rather than the person actually using it
-
-Q: Why the patches even if compiling?
-
-A: ~~It run a local server which I didn't merge into the LC source (yet)~~ You don't need to have both anymore!
 
 Q: Why does the extension only work on http://chriseric1.github.io/ ?
 
@@ -48,9 +41,13 @@ A: Required by discord firewall so it even loads up at all. Similar to CORS, but
 
 Q: Antivirus flags your files
 
-A: These files aren't signed at all, thats why.
+A: These files aren't digitally signed at all, thats why.
 
 Q: Are you going to update the client?
 
 A: No, since I can't unless I knew how to but I don't, LC is as new as we are most likely going to get. But for the web, I at least tried to, but there were gateway problems so I left it as is.
+
+Q: Lightcord is still too old for me
+
+A: There is also http://github.com/ChrisEric1/DiscordBotClient & http://github.com/ChrisEric1/aikodbc.github.io
 
