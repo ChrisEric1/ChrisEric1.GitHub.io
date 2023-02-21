@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="14px" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-alert</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Settings" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-HD---Games,-Add" sketch:type="MSArtboardGroup" transform="translate(-1080.000000, -494.000000)">
+            <g id="Screenshot-2016-01-07-10.57.49-+-Rectangle-311" sketch:type="MSLayerGroup" transform="translate(320.000000, 187.000000)">
+                <g id="Rectangle-653-+-Rectangle-652" transform="translate(198.000000, 286.000000)" sketch:type="MSShapeGroup">
+                    <g id="icon-alert" transform="translate(562.000000, 20.000000)">
+                        <path d="M1.87019451,14.9999998 C0.217018258,14.9999998 -0.439739866,13.8378101 0.398713511,12.4119493 L6.4473712,2.12569588 C7.28787094,0.696355068 8.65761406,0.699835096 9.50217414,2.12569592 L15.594886,12.4119495 C16.4415073,13.8412904 15.7857917,15 14.1344891,15 L1.87019451,14.9999998 Z" id="Path-117" fill="#FAA61A"></path>
+                        <path d="M9.14,6.1 L6.91,6.1 L7.51,10.48 L8.58,10.25 L9.14,6.1 Z M8.97,13 L8.97,11.05 L7.08,11.05 L7.08,13 L8.97,13 Z" id="!" fill="#FFFFFF"></path>
+                        <rect id="Rectangle-426" x="0" y="0" width="16" height="16"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

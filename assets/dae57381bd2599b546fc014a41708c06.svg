@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="110px" height="140px" viewBox="0 0 110 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-file-large-video</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.07 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="-1" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.07 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Drag-&amp;-Drop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-HD---Drag-&amp;-Drop,-Droplet" sketch:type="MSArtboardGroup" transform="translate(-1029.000000, -867.000000)">
+            <g id="Group" sketch:type="MSLayerGroup" transform="translate(239.000000, 880.000000)">
+                <g id="icon-file-large-video" transform="translate(810.000000, 0.000000)" sketch:type="MSShapeGroup">
+                    <g id="Group">
+                        <path d="M0,6.99306484 C0,3.68318653 2.68269472,1 5.99816412,1 L50.3457791,1 C54.8977123,1 70,16.3919735 70,21.0914279 L70,95.0027386 C70,98.3149346 67.3201398,101 64.0015788,101 L5.99842118,101 C2.68558464,101 0,98.312319 0,95.0069352 L0,6.99306484 Z" id="Rectangle-113" stroke="#7289DA" stroke-width="2" fill="#F4F6FC" filter="url(#filter-1)"></path>
+                        <path d="M12,1 L14,1 L14,101 L12,101 L12,1 Z M56,1 L58,1 L58,101 L56,101 L56,1 Z M0,92 L12,92 L12,94 L0,94 L0,92 Z M58,92 L70,92 L70,94 L58,94 L58,92 Z M0,80 L12,80 L12,82 L0,82 L0,80 Z M58,80 L70,80 L70,82 L58,82 L58,80 Z M0,68 L12,68 L12,70 L0,70 L0,68 Z M58,68 L70,68 L70,70 L58,70 L58,68 Z M0,56 L12,56 L12,58 L0,58 L0,56 Z M58,56 L70,56 L70,58 L58,58 L58,56 Z M0,44 L12,44 L12,46 L0,46 L0,44 Z M58,44 L70,44 L70,46 L58,46 L58,44 Z M0,32 L12,32 L12,34 L0,34 L0,32 Z M58,32 L70,32 L70,34 L58,34 L58,32 Z M0,20 L12,20 L12,22 L0,22 L0,20 Z M58,20 L70,20 L70,22 L58,22 L58,20 Z M0,8 L12,8 L12,10 L0,10 L0,8 Z" id="Rectangle-611" fill="#7289DA"></path>
+                        <path d="M51,3.99706188 C51,0.684976062 52.8947487,-0.105251323 55.2418213,2.24182129 L68.7581787,15.7581787 C71.1008719,18.1008719 70.3133742,20 67.0029381,20 L54.0013869,20 C52.3437667,20 51,18.6569187 51,16.9986131 L51,3.99706188 Z" id="Path" stroke="#7289DA" stroke-width="2" fill="#F4F6FC" filter="url(#filter-2)"></path>
+                        <path d="M54,7 L54,14.5023733 C54,15.8817744 55.1096621,17 56.5,17 L59,17" id="Path-157" stroke-opacity="0.6" stroke="#C9D2F0" stroke-width="2"></path>
+                        <polygon id="Triangle-1" stroke="#7289DA" stroke-width="2" fill="#F4F6FC" transform="translate(34.952351, 51.000068) rotate(-270.000000) translate(-34.952351, -51.000068) " points="34.9522836 39.9524194 44.9522836 59.9524194 24.9522836 59.9524194 "></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

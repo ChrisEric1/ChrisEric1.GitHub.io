@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="10px" viewBox="0 0 12 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_arrow_left_up_15px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="6.875 5.625 7.7625 6.5125 5.51875 8.75 11.25 8.75 11.25 2.5 12.5 2.5 12.5 10 5.51875 10 7.7625 12.2375 6.875 13.125 3.125 9.375"></polygon>
+    </defs>
+    <g id="Rich-Presence" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="invite-education-2" transform="translate(-44.000000, -1008.000000)">
+            <g id="Icons/Navigation/ic_subdirectory_arrow_left" transform="translate(50.500000, 1012.500000) rotate(90.000000) translate(-50.500000, -1012.500000) translate(43.000000, 1005.000000)">
+                <g id="ic_arrow_left_up_15px">
+                    <g>
+                        <polygon id="Shape" points="0 0 15 0 15 15 0 15"></polygon>
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Shape" fill="#FFFFFF" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

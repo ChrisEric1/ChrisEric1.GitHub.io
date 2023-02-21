@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+  <g fill="none" fill-rule="evenodd" transform="rotate(90 9 9)">
+    <rect width="18" height="18" rx="3"/>
+    <path fill="#99AAB5" d="M4 12.84615385L5.125 14 10 9 5.125 4 4 5.1538462 7.75 9"/>
+    <path fill="#99AAB5" d="M14 5.15384615L12.875 4 8 9l4.875 5L14 12.8461538 10.25 9"/>
+  </g>
+</svg>
