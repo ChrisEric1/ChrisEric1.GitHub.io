@@ -31,7 +31,7 @@ async function createWindow() {
 	};
 	const { session } = win.webContents;
 	session.webRequest.onBeforeSendHeaders(filter, (details, callback) => {
-		details.requestHeaders["origin"] = "https://discord.com";
+		details.requestHeaders["origin"] = "https://canary.discord.com";
 		delete details.requestHeaders["User-Agent"];
 		callback({ requestHeaders: details.requestHeaders });
 	});

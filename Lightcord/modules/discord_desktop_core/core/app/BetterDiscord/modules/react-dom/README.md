@@ -1,1 +1,0 @@
-An alias for react-dom

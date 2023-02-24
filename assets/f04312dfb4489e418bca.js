@@ -1,0 +1,2 @@
+"use strict";(this.webpackChunkdiscord_app=this.webpackChunkdiscord_app||[]).push([[12702],{580607:(n,o,c)=>{c.r(o);c.d(o,{default:()=>r});var t=c(667294),a=c(517563),e=c(461061);const r=function(){var n=(0,a.parse)(window.location.search).redirect;t.useEffect((function(){if(null!=n&&""!==n){var o=new URL("".concat(window.location.origin).concat(n)),c=new URLSearchParams(o.search);c.set("handoff_token","null");o.search=c.toString();window.location.href=o.toString()}else window.location.href=e.Z5c.LOGIN}),[n]);return null}}}]);
+//# sourceMappingURL=f04312dfb4489e418bca.js.map
