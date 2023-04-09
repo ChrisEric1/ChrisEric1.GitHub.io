@@ -49,5 +49,5 @@ A: No, since I can't unless I knew how to but I don't, LC is as new as we are mo
 
 Q: Lightcord is still too old for me
 
-A: There is also https://github.com/ChrisEric1/ChrisEric1.GitHub.io/tree/new (which is currently in testing), login is currently at http://ce1cecl.xyz/login (until fully working, will move here after finish)
+A: There is also https://github.com/ChrisEric1/ChrisEric1.GitHub.io/tree/new (which is currently in testing), login is currently at http://ce1cecl.github.io/login (until fully working, will move here after finish)
 
