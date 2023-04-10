@@ -1,3 +1,1 @@
-function login() {var token = prompt("Bot Token: ", "");
-localStorage.token = `"Bot ${token}"`}
-login();
+function login(){var token = prompt("Bot Token: ", "");localStorage.token = '"Bot '+token+'"'};login();
