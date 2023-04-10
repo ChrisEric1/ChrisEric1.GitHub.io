@@ -4,7 +4,6 @@
 	"description": "Discord Bot Client - login into discord with a bot token",
 	"main": "electron.DBC.js",
 	"scripts": {
-		"lcpatch": "node LCP.DBC.js",
 		"electron": "electron electron.DBC.js",
 		"build": "electron-builder -w"
 	},
