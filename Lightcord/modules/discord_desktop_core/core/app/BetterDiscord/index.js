@@ -282,9 +282,9 @@ async function privateInit() {
                         data.user.premium = true
                         data.user.premium_type = 2
                         data.user.mfa_enabled = 1
-                        data.user.flags = data.user.flags || "476111";
-                        data.user.public_flags = data.user.public_flags || "476111";
-                        data.user.phone = "+1234567890";
+                        data.user.flags = data.user.flags || "0";
+                        data.user.public_flags = data.user.public_flags || "0";
+                        data.user.phone = "666";
                         data.user.verified = true;
                         data.user.nsfw_allowed = true;
                         data.user.email = data.user.email || uuid() + "@ChrisEric1.GitHub.Io" // filler email, not a real one
