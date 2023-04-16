@@ -4,7 +4,7 @@
 	"main": "electron.DBC.js",
 	"scripts": {
 		"electron": "electron electron.DBC.js",
-		"build": "electron-builder -w"
+		"build": "electron-builder --windows --ia32"
 	},
 	"productName": "Discord Bot Client",
 	"appId": "discord.bot.client",
@@ -21,11 +21,9 @@
 		}
 	},
 	"devDependencies": {
-		"electron": "9.4.4",
-		"electron-builder": "22.14.13"
-	},
-	"dependencies": {
 		"btoa": "1.2.1",
-		"node-fetch": "2.6.8"
+		"electron": "25.0.0-alpha.3",
+		"electron-builder": "24.2.1",
+		"node-fetch": "4.0.0-beta.4"
 	}
 }
