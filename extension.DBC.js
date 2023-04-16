@@ -14,7 +14,7 @@ if (typeof chrome !== "undefined") {
 if (chr) extraInfoSpecRequest.push("extraHeaders") && extraInfoSpecResponse.push("extraHeaders");
 chrome.webRequest.onBeforeSendHeaders.addListener(
 	function (details) {
- 		if (chr) if (details.initiator !== "https://" + dbcloginurl) return;
+ 		if (chr) if (!details.initiator.includes(dbcloginurl)) return;
  		if (fir) if (!details.originUrl.includes(dbcloginurl)) return;
 
 		let header = details.requestHeaders.find((e) => e.name.toLowerCase() === "origin");
@@ -32,7 +32,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
 );
 chrome.webRequest.onHeadersReceived.addListener(
 	(details) => {
- 		if (chr) if (details.initiator !== "https://" + dbcloginurl) return;
+ 		if (chr) if (!details.initiator.includes(dbcloginurl)) return;
  		if (fir) if (!details.originUrl.includes(dbcloginurl)) return;
 
 		let header = details.responseHeaders.find((e) => e.name.toLowerCase() === "access-control-allow-origin");
