@@ -6,17 +6,7 @@ var btoa = require("btoa");
 async function createWindow() {
 	var html = await fetch(dbcloginurl);
 	html = await html.text();
-	let win = new BrowserWindow({
-		width: 800,
-		height: 600,
-		icon: __dirname + "/ico.DBC.png",
-		webPreferences: {
-			webSecurity: true,
-			nodeIntegration: false,
-			enableRemoteModule: false,
-			contextIsolation: true,
-		},
-	});
+	let win = new BrowserWindow();
 	win.webContents.on("did-navigate", () => {
 		win.webContents.executeJavaScript(`document.write(atob("${btoa(html)}"))`);
 	});
