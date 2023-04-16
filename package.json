@@ -3,8 +3,8 @@
 	"version": "0.0.0",
 	"main": "electron.DBC.js",
 	"scripts": {
-		"electron": "electron electron.DBC.js",
-		"build": "electron-builder --windows --ia32"
+		"test": "electron electron.DBC.js",
+		"start": "electron-builder --windows --ia32"
 	},
 	"productName": "Discord Bot Client",
 	"appId": "discord.bot.client",
