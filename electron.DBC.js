@@ -1,22 +1,12 @@
-const dbcloginurl = "https://chriseric1.github.io/login"
+var dbcloginurl = "http://chriseric1.github.io"
 
-const { app, BrowserWindow, systemPreferences } = require("electron");
-const fetch = require("node-fetch");
-const btoa = require("btoa");
+var { app, BrowserWindow, systemPreferences } = require("electron");
+var fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+var btoa = require("btoa");
 async function createWindow() {
 	var html = await fetch(dbcloginurl);
 	html = await html.text();
-	let win = new BrowserWindow({
-		width: 800,
-		height: 600,
-		icon: __dirname + "/icon.png",
-		webPreferences: {
-			webSecurity: true,
-			nodeIntegration: false,
-			enableRemoteModule: false,
-			contextIsolation: true,
-		},
-	});
+	let win = new BrowserWindow();
 	win.webContents.on("did-navigate", () => {
 		win.webContents.executeJavaScript(`document.write(atob("${btoa(html)}"))`);
 	});
@@ -26,12 +16,12 @@ async function createWindow() {
 		require("electron").shell.openExternal(url);
 	});
 	win.loadURL(dbcloginurl);
-	const filter = {
+	var filter = {
 		urls: ["<all_urls>"],
 	};
-	const { session } = win.webContents;
+	var { session } = win.webContents;
 	session.webRequest.onBeforeSendHeaders(filter, (details, callback) => {
-		details.requestHeaders["origin"] = "https://discord.com";
+		details.requestHeaders["origin"] = "https://canary.discord.com";
 		delete details.requestHeaders["User-Agent"];
 		callback({ requestHeaders: details.requestHeaders });
 	});
