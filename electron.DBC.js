@@ -1,12 +1,12 @@
-var dbcloginurl = "http://chriseric1.github.io"
+var dbcloginurl = "http://chriseric1.github.io/login"
 
 var { app, BrowserWindow, systemPreferences } = require("electron");
-var fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-var btoa = require("btoa");
 async function createWindow() {
+	var fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 	var html = await fetch(dbcloginurl);
 	html = await html.text();
 	let win = new BrowserWindow();
+	var btoa = require("btoa");
 	win.webContents.on("did-navigate", () => {
 		win.webContents.executeJavaScript(`document.write(atob("${btoa(html)}"))`);
 	});
