@@ -1,0 +1,2 @@
+"use strict";(this.webpackChunkdiscord_app=this.webpackChunkdiscord_app||[]).push([[41394],{441394:(a,e,l)=>{l.d(e,{Z:()=>u});var s=l(785893),i=(l(667294),l(294184)),c=l.n(i),n=l(945460),o=l(473708),r=l(165580),t=l.n(r),k=Object.freeze({DEFAULT:t().default,FILLED:t().filled});function u(a){var e=a.className,l=a.onClick,i=a["aria-label"],r=a.look,u=void 0===r?k.DEFAULT:r;return(0,s.jsx)(n.Clickable,{"aria-label":null!=i?i:o.Z.Messages.REMOVE,className:c()(t().button,u,e),onClick:l})}u.Looks=k}}]);
+//# sourceMappingURL=ceeac5f9cdfeb0665520.js.map
