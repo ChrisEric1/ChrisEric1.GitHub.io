@@ -1,1 +1,0 @@
-"use strict";(this.webpackChunkdiscord_app=this.webpackChunkdiscord_app||[]).push([[1305],{301305:i=>{i.exports=JSON.parse('{"GUILD_VERIFIED":"Terverifikasi","SETTINGS_GAMES_VERIFIED_ICON":"Terverifikasi"}')}}]);
