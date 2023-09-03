@@ -12,8 +12,8 @@
   "appId": "com.electron.discord-bot-client",
   "devDependencies": {
     "electron": "2.0.18",
-    "electron-builder": "20.39.0",
-    "electron-builder-squirrel-windows": "20.39.0"
+    "electron-builder": "22.10.5",
+    "electron-builder-squirrel-windows": "22.10.5"
   },
   "dependencies": {
     "btoa": "1.2.1",
