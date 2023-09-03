@@ -1,5 +1,5 @@
 ---
-appId: com.aiko.Lightcord.Lightcord
+appId: com.electron.discord-bot-client.Lightcord
 productName: Lightcord
 remoteBuild: false
 directories:
@@ -9,13 +9,6 @@ directories:
 afterPack: "scripts/afterpack.js"
 win:
   artifactName: ${name}-win32-${arch}.${ext}
-  target:
-  - target: zip
-    arch:
-    - ia32
-  - target: portable
-    arch:
-    - ia32
   icon: discord.ico
   publisherName: Lightcord
   files:
@@ -31,13 +24,6 @@ win:
   - "**/*.dll"
 linux:
   artifactName: ${name}-linux-${arch}.${ext}
-  target:
-  - target: zip
-    arch:
-    - x64
-  - target: AppImage
-    arch:
-    - x64
   icon: discord.png
   files:
   - "**/*"
@@ -51,10 +37,6 @@ linux:
   - "**/*.so.4"
 mac:
   artifactName: ${name}-darwin-x64.${ext}
-  target:
-  - target: zip
-    arch:
-    - x64
   icon: discord.icns
   files:
   - "**/*"
