@@ -11,7 +11,7 @@
   "productName": "Discord Bot Client",
   "appId": "com.electron.discord-bot-client",
   "devDependencies": {
-    "electron": "2.0.18",
+    "electron": "11.5.0",
     "electron-builder": "22.10.5",
     "electron-builder-squirrel-windows": "22.10.5"
   },
