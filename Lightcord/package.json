@@ -46,7 +46,7 @@
     "@types/yauzl": "2.10.0",
     "asar": "3.2.0",
     "dotenv": "8.6.0",
-    "electron": "2.0.18",
+    "electron": "11.5.0",
     "electron-builder": "22.10.5",
     "electron-builder-squirrel-windows": "22.10.5",
     "fast-glob": "3.2.12",
