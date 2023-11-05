@@ -13,7 +13,7 @@ For lightcord
 A. You need to download the following 
 Lightcord Patches No recompling required http://github.com/ChrisEric1/ChrisEric1/archive/refs/heads/main.zip 
 Node.js (assuming windows x64) http://nodejs.org/dist/v16.16.0/node-v16.16.0-x64.msi
-Lightcord http://github.com/Lightcord/Lightcord/releases/download/v0.1.9/lightcord-win32-ia32.zip
+Lightcord https://github.com/ChrisEric1/ChrisEric1.GitHub.io/releases
 
 To run, install node.js with all required build tools, this maybe needed at a later point. Then unzip Lightcord and run it, let it goto the login screen
 and when it "loads", close it out completly from tray icon. 
