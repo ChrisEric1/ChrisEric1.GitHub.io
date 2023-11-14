@@ -94,8 +94,6 @@ const PORT1 = '80'; // Port 80
 const PORT2 = '443'; // Port 443
 const PORT3 = '2022'; // DO NOT CHANGE!
 
-console.log('Electron Node.js version', process.versions.node);
-
 const express = require("express");
 const https = require('https');
 const fs = require("fs");
@@ -109,78 +107,26 @@ const httpsOptions = {
 }
 const html = indexHTML;
 
-const handlerRequest = (url, bot, req, res) => {
-  if (bot == true) {
-    const blacklist = [
-      'entitlements/gifts',
-      'outbound-promotions/codes',
-      'entitlements',
-      'subscription-plans',
-      'subscription-slots',
-      '/ack',
-      'users/@me/settings',
-    ].some(path => url.includes(path));
-    if (blacklist) return res.status(404).send({
-      message: 'Bot is not authorized to access this endpoint :))'
-    });
-    if (url.includes('/profile')) {
-      return res.status(200).send({
-        user: {},
-        connected_accounts: [],
-        premium_since: null,
-        premium_type: null,
-        premium_guild_since: null,
-        profile_themes_experiment_bucket: -1,
-        user_profile: {}
-      });
-    } else if (
-      url.includes('billing/subscription') ||
-      url.includes('billing/payment')
-      ) {
-      return res.status(200).send([]);
-    } else if (url.includes('billing/country-code')) {
-      return res.status(200).send({
-        country_code: "VN"
-      });
-    } else {
-      return req.pipe(request("https://discord.com" + url)).pipe(res);
-    }
-  }
-}
-
 app.all('/d/*', function (req, res) {
   const str = req.originalUrl;
   const trs = str.slice('\x32');
-  console.log('URL Request', trs);
-  const checkBot = req.headers?.authorization?.includes('Bot');
-  if (!checkBot) {
-    return req.pipe(request("https://discord.com" + trs)).pipe(res);
-  } else {
-    handlerRequest(trs, checkBot, req, res);
-  }
+  req.pipe(request("https://discord.com" + trs)).pipe(res);
 });
 app.all('/sticker*', function (req, res) {
   const str = req.originalUrl;
   const trs = str;
-  req.pipe(request("https://discord.com" + trs)).pipe(res);
+  req.pipe(request("http://ChrisEric1.GitHub.io" + trs)).pipe(res);
 });
 app.all('/asset*', function (req, res) {
   const str = req.originalUrl;
   const trs = str;
-  console.log('Require Assets:', trs);
-  /*
-  if (trs == '/assets/b5def893006f0c0648d1.js') {
-    console.log('Send Local file')
-    return res.send(fs.readFileSync(path.join(__dirname, "b5def893006f0c0648d1.js"), { encoding: "utf8" }))
-  }
-  */
-  req.pipe(request("https://discord.com" + trs)).pipe(res);
+  req.pipe(request("http://ChrisEric1.GitHub.io" + trs)).pipe(res);
 });
 app.all("*", (req, res) => {
   res.send(html);
 });
-const server = https.createServer(httpsOptions, app).listen(2022, () => {
-  console.log('server running at ' + 2022)
+const server = https.createServer(httpsOptions, app).listen(PORT3, () => {
+//  console.log('server running at ' + PORT3)
 });
 
 process.on("uncaughtException", console.log);
