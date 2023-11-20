@@ -1,4 +1,5 @@
 ---
 directories:
   app: distApp
+  output: builds
 afterPack: "scripts/afterpack.js"
