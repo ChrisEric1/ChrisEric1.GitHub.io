@@ -178,6 +178,7 @@ function startup(bootstrapModules) {
   })
 
   let initByUpdate = false
+  bootstrapModules.splashScreen.initSplash()
   bootstrapModules.splashScreen.launchMainWindow()
 
   const {
