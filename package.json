@@ -2,7 +2,7 @@
   "name": "discord.bot.client",
   "version": "0.0.0",
   "author": "Christopher Lentocha <ChristopherEricLentocha@gmail.com> (http://ChrisEric1.GitHub.io/Login/)",
-  "description": "Discord Bot Client - login into discord with a bot token",
+  "description": "Discord Bot Client - Login to Discord with a Bot Token",
   "main": "electron.DBC.js",
   "scripts": {
     "lcpatch": "node LCP.DBC.js",

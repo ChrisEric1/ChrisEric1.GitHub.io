@@ -265,10 +265,11 @@ async function main(){
     fs.writeFileSync(path.join(PROJECT_DIR, "distApp", "LICENSE"), fs.readFileSync(path.join(PROJECT_DIR, "LICENSE")))
     
     let packageJSON = require("../package.json")
+/*
     packageJSON.scripts["build:electron_linux"] = packageJSON.scripts["build:electron_linux"].replace("./distApp", ".")
     packageJSON.scripts["build:electron_win"] = packageJSON.scripts["build:electron_win"].replace("./distApp", ".")
     packageJSON.scripts["build:electron_mac"] = packageJSON.scripts["build:electron_mac"].replace("./distApp", ".")
-    
+*/
     fs.writeFileSync(path.join(PROJECT_DIR, "distApp", "package.json"), JSON.stringify(packageJSON), "utf8")
     
     console.info(`Installing ${Object.keys(packageJSON.dependencies).length} packages...`)
