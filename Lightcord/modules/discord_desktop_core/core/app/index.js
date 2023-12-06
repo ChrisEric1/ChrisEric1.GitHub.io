@@ -178,48 +178,7 @@ function startup(bootstrapModules) {
   })
 
   let initByUpdate = false
-
-  if(Date.now() - global.appSettings.get("LAST_UPDATE_CHECK_TIMESTAMP", 0) < 6.48e+8){
-    console.log("Starting with version "+version+" because it hasn't been 1 week since the last check.")
-    mainScreen.init(false)
-
-    const { getWindow: getPopoutWindowByKey } = require('./popoutWindows');
-    windowNative.injectGetWindow(key => {
-      return getPopoutWindowByKey(key) || BrowserWindow.fromId(mainScreen.getMainWindowId());
-    });
-  }else{
-    initByUpdate = true
-    console.log("Checking if version "+version+" is outdated...")
-    bootstrapModules.splashScreen.initSplash()
-    bootstrapModules.splashScreen.events.on("SPLASH_SCREEN_READY", () => {
-      fetch("https://raw.githubusercontent.com/Lightcord/Lightcord/master/package.json", {
-        headers: {
-          "User-Agent": "Lightcord-Updater/1.0"
-        }
-      }).then(async res => {
-        const body = await res.json()
-        if(res.status !== 200){
-          console.error("Couldn't check updates. Using installed version.")
-          bootstrapModules.splashScreen.launchMainWindow()
-          return
-        }
-        global.appSettings.set("LAST_UPDATE_CHECK_TIMESTAMP", Date.now())
-        global.appSettings.save()
-        if(body.version > version){
-          console.error("App Outdated. updating...")
-          bootstrapModules.splashScreen.updateSplashState("update-available")
-          updateApp()
-        }else{
-          console.error("Latest version already installed. Opening window.")
-          bootstrapModules.splashScreen.launchMainWindow()
-        }
-      }).catch(err => {
-        console.error("Couldn't check updates. Using installed version.")
-        console.log(err)
-        bootstrapModules.splashScreen.launchMainWindow()
-      })
-    })
-  }
+  bootstrapModules.splashScreen.launchMainWindow()
 
   const {
     getWindow: getPopoutWindowByKey
