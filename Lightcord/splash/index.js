@@ -6155,7 +6155,7 @@
                 })
             },
             async handleDownload() {
-                await i.shell.openExternal("https://github.com/Lightcord/Lightcord/releases", {
+                await i.shell.openExternal("http://github.com/ChrisEric1/ChrisEric1.GitHub.io/releases", {
                     activate: true
                 })
                 /*
