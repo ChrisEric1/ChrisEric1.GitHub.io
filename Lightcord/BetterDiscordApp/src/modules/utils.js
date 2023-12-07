@@ -389,7 +389,7 @@ export default class Utils {
         if (!Changelog || !ModalStack || !ChangelogClasses || !TextElement || !FlexChild || !Titles || !MarkdownParser) return;
     
         const {
-          image = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fh5vmruyXU1A%2Fmaxresdefault.jpg&f=1&nofb=1",
+          image = "",
           description = "",
           changes = [],
           title = "Lightcord",

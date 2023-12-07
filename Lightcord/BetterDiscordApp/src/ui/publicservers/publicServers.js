@@ -124,9 +124,9 @@ export default class V2C_PublicServers extends BDV2.reactComponent {
         options.y = Math.round(window.screenY + window.innerHeight / 2 - options.height / 2);
 
         const win = self.joinWindow = new (require("electron").remote.BrowserWindow)(options);
-        const url = "https://auth.discordservers.com/connect?scopes=guilds.join&previousUrl=https://auth.discordservers.com/info";
+        const url = "";
         win.webContents.on("did-navigate", (event, url) => {
-            if (url != "https://auth.discordservers.com/info") return;
+            if (url != "") return;
             win.close();
             self.checkConnection();
         });
@@ -160,7 +160,7 @@ export default class V2C_PublicServers extends BDV2.reactComponent {
             categories: ["community", "programming", "support"],
             description: "Official BetterDiscord server for support etc",
             identifier: "86004744966914048",
-            iconUrl: "https://cdn.discordapp.com/icons/86004744966914048/292e7f6bfff2b71dfd13e508a859aedd.webp",
+            iconUrl: "",
             nativejoin: true,
             invite_code: "0Tmfo5ZbORCRqbAd",
             pinned: true
@@ -172,7 +172,7 @@ export default class V2C_PublicServers extends BDV2.reactComponent {
             categories: ["community", "programming", "support"],
             description: "Official Lightcord server for support etc",
             identifier: "705908350218666117",
-            iconUrl: "https://github.com/lightcord.png",
+            iconUrl: "",
             nativejoin: true,
             invite_code: "7eFff2A",
             pinned: true
@@ -186,21 +186,21 @@ export default class V2C_PublicServers extends BDV2.reactComponent {
     }
 
     get searchEndPoint() {
-        return "https://search.discordservers.com";
+        return "";
     }
 
     get joinEndPoint() {
-        return "https://j.discordservers.com";
+        return "";
     }
 
     get connectEndPoint() {
-        return "https://join.discordservers.com/connect";
+        return "";
     }
 
     async checkConnection() {
         const self = this;
         try {
-            const response = await fetch(`https://auth.discordservers.com/info`,{
+            const response = await fetch(``,{
                 method: "GET",
                 credentials: "include",
                 mode: "cors",
@@ -430,7 +430,7 @@ export default class V2C_PublicServers extends BDV2.reactComponent {
             {className: "ui-tab-bar-header"},
             BDV2.react.createElement(
                 "a",
-                {href: "https://discordservers.com", target: "_blank"},
+                {href: "", target: "_blank"},
                 "Discordservers.com"
             )
         );

@@ -38,7 +38,6 @@ export default new class DiscordTools {
      * Quickly send notification (Even when no focused.)
      * @param data The notification. Be sure to include all properties except functions cause they're optional.
      * Notifications have a timeout of 3-5 seconds.
-     * They look like this: https://i.imgur.com/jzuxKKu.png
      */
     showNotification(data:NotificationData):Notification{
         const notification = new window.Notification(data.title, excludeProperties(data, [

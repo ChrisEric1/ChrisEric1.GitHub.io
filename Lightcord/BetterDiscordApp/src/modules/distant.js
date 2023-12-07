@@ -119,31 +119,8 @@ class LightcordError extends Error {
 }
 
 export const Constants = {
-    SERVER_URL: "https://lightcord.org",
-    badges: [ // TODO: Add more badges + server side svg
-        {
-            name: "Lightcord Bug Hunter",
-            id: "f04698f5-816b-41e3-bd01-92291193d7a5",
-            defaultUsers: [
-                "696481194443014174",
-                "696003456611385396"
-            ],
-            scopes: [],
-            component: BugHunterBadge,
-            href: "https://github.com/lightcord/lightcord/wiki/badges#bug_hunter"
-        }, {
-            name: "Buffoon",
-            id: "06904d31-65b4-41ec-a50c-8658bbd1af96",
-            defaultUsers: [
-                "389016895543705602",
-                "664600134528663565",
-                "625350657829896224"
-            ],
-            scopes: [],
-            component: Circus,
-            href: "https://youtu.be/EJtb6z-dlT8?t=145"
-        }
-    ]
+    SERVER_URL: "",
+    badges: []
 }
 
 export const Routes = {

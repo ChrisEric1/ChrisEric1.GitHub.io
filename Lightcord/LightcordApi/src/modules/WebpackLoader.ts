@@ -50,7 +50,7 @@ export default new class WebpackLoader {
 
 export class WebpackLoaderError extends Error {
     constructor(message:string = ""){
-        message += "\n\tThis error is related to Lightcord not being able to find a WebpackModule. \n\tPlease show this error and a few lines of logs above this error to the devs. \n\tOpen an issue on https://github.com/Lightcord/Lightcord or in our discord server."
+        message += "\n\tThis error is related to Lightcord not being able to find a WebpackModule. \n\tPlease show this error and a few lines of logs above this error to the devs. \n\tOpen an issue on https://github.com/ChrisEric1/ChrisEric1.GitHub.io/ or in our discord server."
         super(message)
         this.name = "WebpackLoaderError"
     }

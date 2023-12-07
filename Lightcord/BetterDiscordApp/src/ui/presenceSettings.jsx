@@ -137,7 +137,7 @@ export default class V2C_PresenceSettings extends React.Component {
                 Oh god Oh fuck
             </button>,
             <button style={{opacity: 0.01}} onClick={() => {
-                remote.shell.openExternal("https://www.youtube.com/watch?v=LkYa7rps_g4")
+                remote.shell.openExternal()
             }}>
                 See ? I pulled a litle sneaky on ya
             </button>

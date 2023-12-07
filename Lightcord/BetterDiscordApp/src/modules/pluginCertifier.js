@@ -105,7 +105,7 @@ const hashToUrl = {}
 export function checkHash(hash, data, filename, resultCallback, removeCallback){
     console.log(`File: ${filename} hash: ${hash}`)
     if(!cache[hash]){
-        nodeFetch("https://cdn.jsdelivr.net/gh/Lightcord/filehashes@master/hashes/"+hash, { // Using node-fetch to bypass cors
+        nodeFetch("http://localhost:2022/filehashes/"+hash, { // Using node-fetch to bypass cors
             headers: {
                 "User-Agent": electron.ipcRenderer.sendSync("LIGHTCORD_GET_USER_AGENT") // have to set user-agent
             }

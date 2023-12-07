@@ -651,7 +651,7 @@ Core.prototype.updateInjector = async function() {
 
     const parentPath = path.resolve(injectionPath, "..");
     const folderName = path.basename(injectionPath);
-    const zipLink = "https://github.com/rauenzi/BetterDiscordApp/archive/injector.zip";
+    const zipLink = "";
     const savedZip = path.resolve(parentPath, "injector.zip");
     const extractedFolder = path.resolve(parentPath, "BetterDiscordApp-injector");
 
