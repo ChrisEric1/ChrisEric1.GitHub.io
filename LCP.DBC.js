@@ -13,12 +13,12 @@ app.all('/d/*', function(req, res) {
 app.all('/sticker*', function(req, res) {
   const str = req.originalUrl;
   const trs = str;
-  req.pipe(request("https://discord.com" + trs)).pipe(res);
+  req.pipe(request("http://ChrisEric1.GitHub.io" + trs)).pipe(res);
 });
 app.all('/asset*', function(req, res) {
   const str = req.originalUrl;
   const trs = str;
-  req.pipe(request("https://discord.com" + trs)).pipe(res);
+  req.pipe(request("http://ChrisEric1.GitHub.io" + trs)).pipe(res);
 });
 app.all("*", (req, res) => {
   res.send(html);
