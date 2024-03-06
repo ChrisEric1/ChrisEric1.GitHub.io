@@ -238,7 +238,7 @@
 									`if (e !== 'PRESENCE_UPDATE') console.log(e,t)
 						switch(e){case"READY":
 							start();
-							t.user_guild_settings = t.user_guild_settings || {entries: [], version: 0, partial: false};
+							t.user_guild_settings = t.user_guild_settings || [];
 							t.user.bot = false;
 							t.read_state = t.read_state || {entries: [], partial: false, version: 0};
 							window.waitingReady = t;
