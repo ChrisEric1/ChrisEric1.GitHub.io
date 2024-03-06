@@ -240,7 +240,7 @@
 							start();
 							t.user_guild_settings = [];
 							t.user.bot = false;
-							t.read_state = {entries: [], partial: false, version: 0};
+							t.read_state = [];
 							window.waitingReady = t;
 							if ((t.guilds[0] && !t.guilds[0].unavailable) || true) {
 								${varname}._events.dispatch("BOTREADY",window.waitingReady);
