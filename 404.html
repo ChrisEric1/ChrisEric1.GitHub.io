@@ -237,6 +237,8 @@
 									`if (e !== 'PRESENCE_UPDATE') 
 						switch(e){case"READY":
 							console.warn(t);
+							t.experiments = [];
+							t.guild_experiments = [];
 							t.user_guild_settings = [];
 							t.read_state = {entries: [], partial: false, version: 0};
 							t.user.bot = false;
