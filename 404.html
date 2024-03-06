@@ -236,13 +236,12 @@
 									`switch(e){case"READY":`,
 									`if (e !== 'PRESENCE_UPDATE') 
 						switch(e){case"READY":
-start();
-//console.warn(t.user_guild_settings);
-console.warn(t.read_state);
-t.user_guild_settings = [];
-//t.read_state = [];
-t.user.bot = false;
-t.user.email = " ";
+							console.warn(t);
+							t.user_guild_settings = [];
+							t.read_state = {entries: [], partial: false, version: 0};
+							t.user.bot = false;
+							t.user.email = " ";
+							start();
 							window.waitingReady = t;
 							if ((t.guilds[0] && !t.guilds[0].unavailable) || true) {
 								${varname}._events.dispatch("BOTREADY",window.waitingReady);
