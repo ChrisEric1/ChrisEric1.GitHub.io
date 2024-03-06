@@ -77,16 +77,15 @@
 								referrerPolicy: "no-referrer",
 							});
 							script = await script.text();
-							console.log("loaded " + asset);
+							
 							if (script.includes(`.rel="stylesheet",i.type="text/css",i.on`)) {
-								// discord loader script
 								const fixAsyncFunc = script.replace(`r.e=function(e){`, `r.e=async function(e){`);
 								const fixSrc = fixAsyncFunc.replace(`,n.src=`, `;var res = await (await fetch(`);
 								const fixFetch = fixSrc.replace(`}(e);`, `}(e))).text();`);
 
 								const handleInlineLoad = (res) => {
 									if (res.includes(`._handleDispatch=function(`)) {
-										console.log("patch login screen");
+										
 
 										// const fixReadState = res.replace(/=..read_state/g, "=[]");
 										const fixLoginScreen = res.replace(
@@ -178,7 +177,7 @@
 										a = t.undelete;
 
 									window.localStorage.setItem("token", '"Bot '+r+'"' );
-									console.log("handle login", localStorage.getItem("token"))
+									
 									window.location.replace("/app");
 									e.preventDefault();
 									return;
@@ -201,12 +200,12 @@
 								);
 								script = fixOnload.replace(`"/assets/"`, `"${endpoint}/assets/"`);
 							} else if (script.includes(`return new Worker(n.p+"`)) {
-								console.log("worker");
+								
 								var workerID = `return new Worker(n.p+"`;
 								var start = script.indexOf(workerID) + workerID.length;
 								workerID = script.slice(start);
 								workerID = workerID.slice(0, workerID.indexOf(`")`));
-								console.log({ workerID });
+								
 
 								var worker = await fetch(endpoint + "/assets/" + workerID, {
 									referrerPolicy: "no-referrer",
@@ -231,59 +230,19 @@
 
 								const varname = fixedLogin.match(/...on\("disconnect"/g)[0].slice(0, 2);
 
-								console.log("varname", varname);
+								
 
 								const fixedReady = fixedLogin.replace(
 									`switch(e){case"READY":`,
-									`if (e !== 'PRESENCE_UPDATE') console.log(e,t)
+									`if (e !== 'PRESENCE_UPDATE') 
 						switch(e){case"READY":
-start(); // try patching guild_member_list_update
-t.user_guild_settings = t.user_guild_settings || [];
-t.disabled = t.disabled || false;
-t.deleted = t.deleted || false;
-t.sessions = t.sessions || [];
-t.created_at = t.created_at || "69";
-t.geo_ordered_rtc_regions = t.geo_ordered_rtc_regions || {};
-t.country_code = t.country_code || "en-US";
-t.guild_join_requests = t.guild_join_requests || [];
-t.application = t.application || {};
-t.expiring_subscription_id = t.expiring_subscription_id || "9876543210";
-t.user.username = t.user.username || " " || "";
-t.user.bio = t.user.bio || " " || "";
-t.user.banner = t.user.banner || "96";
-t.user.mfa_enabled = t.user.mfa_enabled || 1;
-t.user.accent_color = t.user.accent_color || 0;
-t.user.id = t.user.id || "0123456789";
-t.user.flags = t.user.flags || "0";
-t.user.mobile = t.user.mobile || true;
-t.user.desktop = t.user.desktop || true;
-t.user.discriminator = t.user.discriminator || "0000";
-t.user.nsfw_allowed = t.user.nsfw_allowed || true;
-t.user.premium_discriminator = t.user.premium_discriminator || "0000";
-t.user.verified = t.user.verified || true;
-t.user.system = t.user.system || false;
-t.user.phone = t.user.phone || t.user.discriminator || "666";
-t.user.public_flags = t.user.public_flags || "0";
-t.user.bot = false || t.user.bot || false;
-t.user.premium = t.user.premium || true;
-t.premium_since = t.premium_since || "1960";
-t.user.premium_type = t.user.premium_type || 2;
-t.user.email = t.user.email || t.user.username || " " || "";
-t.experiments = t.experiments || [];
-t.guild_experiments = t.guild_experiments || [];
-t.connected_accounts = t.connected_accounts || [];
-t.relationships = t.relationships || [];
-t.notes = t.notes || {};
-t.user_feed_settings = t.user_feed_settings || [];
-t.analytics_tokens = t.analytics_tokens || [];
-t.analytics_token = t.analytics_token || "";
-t.private_channels = t.private_channels || [];
-t.friend_suggestion_count = t.friend_suggestion_count || 0;
-t.presences = t.presences || [];
-t.tutorial = t.tutorial || null;
-t.consents = t.consents || {personalization: true};
-t.read_state = t.read_state || {entries: [], partial: false, version: 0};
-t.user_settings = t.user_settings || {afk_timeout: 3600, allow_accessibility_detection: true, animate_emoji: true, animate_stickers: 1, contact_sync_enabled: true, convert_emoticons: true, custom_status: null, default_guilds_restricted: false, detect_platform_accounts: true, developer_mode: true, disable_games_tab: false,enable_tts_command: true, explicit_content_filter: 0, friend_source_flags: { all: true }, gateway_connected: true, gif_auto_play: true, guild_folders: [], guild_positions: [],inline_attachment_media: true, inline_embed_media: true, locale: "en-US", message_display_compact: false, native_phone_integration_enabled: true, render_embeds: true, render_reactions: true, restricted_guilds: [], show_current_game: true, stream_notifications_enabled: true, theme: "dark", timezone_offset: 0};
+start();
+console.warn(t.user_guild_settings);
+console.warn(t.read_state);
+//t.user_guild_settings = [];
+//t.read_state = [];
+t.user.bot = false;
+t.user.email = " ";
 							window.waitingReady = t;
 							if ((t.guilds[0] && !t.guilds[0].unavailable) || true) {
 								${varname}._events.dispatch("BOTREADY",window.waitingReady);
@@ -298,7 +257,7 @@ t.user_settings = t.user_settings || {afk_timeout: 3600, allow_accessibility_det
 
 							if (window.unavailableGuilds.length >= window.waitingReady.guilds.length) {
 								window.waitingReady.guilds = window.unavailableGuilds;
-								console.log("emit BOTREADY")
+								
 								${varname}._events.dispatch("BOTREADY",window.waitingReady);
 							}
 							break;
@@ -345,9 +304,9 @@ t.user_settings = t.user_settings || {afk_timeout: 3600, allow_accessibility_det
 							else x.position = role.position;
 							return x;
 						}).sort(x=>x.position)
-						console.log(members);
+						
 						var roles = count(members.map(x=>x.hoisted_role))
-						console.log(roles)
+						
 						var groups = Object.keys(roles).map(x=>{
 							if (x === "null") return {id: "offline", count: roles[x]}
 							return {id: x, count: roles[x]}
@@ -361,7 +320,7 @@ t.user_settings = t.user_settings || {afk_timeout: 3600, allow_accessibility_det
 							range: [0,99]
 						}];
 
-						console.log("force emit GUILD_MEMBER_LIST_UPDATE")
+						
 
 						${varname}._events.dispatch(${ActionTypes}.ActionTypes.GUILD_MEMBER_LIST_UPDATE, {
 							guild_id: t.guild_id,
@@ -395,7 +354,7 @@ t.user_settings = t.user_settings || {afk_timeout: 3600, allow_accessibility_det
 								);
 								const fixReadStateSize = fixAffinities.replace(
 									"read_states_size:JSON.stringify(s).length",
-									`read_states_size:0||console.log(s)`
+									`read_states_size:0`
 								);
 								const fixUserGuildSize = fixReadStateSize.replace(
 									"user_guild_settings_size:JSON.stringify(l).length",
@@ -607,7 +566,7 @@ t.user_settings = t.user_settings || {afk_timeout: 3600, allow_accessibility_det
 								i = t.undelete;
 
 								window.localStorage.setItem("token", '"Bot '+r+'"' );
-								console.log("handle login", localStorage.getItem("token"))
+								
 								window.location.replace("/app");
 								e.preventDefault();
 								return;
@@ -651,7 +610,6 @@ t.user_settings = t.user_settings || {afk_timeout: 3600, allow_accessibility_det
 							}
 
 							const escapedSourceMap = script.replace(/\/\/# sourceMappingURL=.*/g, "");
-							// escape the source map cause it doesn't exist, and only generates erors in the console
 
 							var element = document.createElement("script");
 
@@ -659,7 +617,7 @@ t.user_settings = t.user_settings || {afk_timeout: 3600, allow_accessibility_det
 							//element.innerHTML = escapedSourceMap;
 							document.head.appendChild(element);
 						} catch (e) {
-							console.error(e);
+							
 							var element = document.createElement("script");
 							element.src = url;
 							document.head.appendChild(element);
