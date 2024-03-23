@@ -3,7 +3,7 @@
 For a electron.js download of the website, no extension required go here (Latest): https://github.com/ChrisEric1/ChrisEric1.GitHub.io/releases/tag/2.0.0 - Supports Mac OS X, Windows 7+, and most Linux distros (Also includes Lightcord for 2024)
 The legacy version can still be found here: https://github.com/ChrisEric1/ChrisEric1.GitHub.io/releases/tag/1.0.0 (NOTE: EOL date is June 7th, 2024)
 
-For accessing the website on something such as a Chromebook, go to: http://chriseric1.github.io/login - then unzip and sideload the extension in any Chromium browser http://github.com/ChrisEric1/ChrisEric1.GitHub.io/archive/refs/heads/old.zip
+For accessing the website on something such as a Chromebook, go to: http://chriseric1.github.io/login - then unzip and sideload the extension in any Chromium browser http://chriseric1.github.io/extension.zip
 
 If you are using Firefox and need the extension go to here: https://github.com/ChrisEric1/ChrisEric1/releases/tag/1.0.0 - However, the latest version of Lightcord (Bot Client), Discord Bot Client, & Firefox Extension can all be found here: https://github.com/ChrisEric1/ChrisEric1.GitHub.io/releases
 
